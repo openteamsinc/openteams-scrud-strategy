@@ -18,6 +18,7 @@ Welcome to OpenTeams SCRUD Technical Strategy's documentation!
    scrud-client
    scrud-ui
    looking-ahead
+   references
 
 
 Indices and tables
