@@ -18,7 +18,8 @@ Example
 -------
 
 The example below is a JSON envelope object of a resource. The `url` property is the URL
-of the resource whose content is contained in the `content` property. The `last-modified` and `etag` properties are the standard HTTP caching headers.
+of the resource whose content is contained in the `content` property. The
+`last-modified` and `etag` properties are the standard HTTP caching headers.
 
 .. sourcecode:: json
    
