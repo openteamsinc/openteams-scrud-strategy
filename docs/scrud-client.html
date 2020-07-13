@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SCRUD Client &#8212; OpenTeams SCRUD Technical Strategy 1.0 documentation</title>
+    <link rel="stylesheet" href="_static/solar.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/language_data.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="&lt;no title&gt;" href="scrud-ui.html" />
+    <link rel="prev" title="Attribute and Role-Based Access Control" href="rbac.html" /><link href='http://fonts.googleapis.com/css?family=Source+Code+Pro|Open+Sans:300italic,400italic,700italic,400,300,700' rel='stylesheet' type='text/css'>
+<link href="_static/solarized-dark.css" rel="stylesheet">
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="scrud-ui.html" title="&lt;no title&gt;"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="rbac.html" title="Attribute and Role-Based Access Control"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">OpenTeams SCRUD Technical Strategy 1.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">SCRUD Client</a></li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">SCRUD Client</a><ul>
+<li><a class="reference internal" href="#caching-client">Caching Client</a></li>
+<li><a class="reference internal" href="#json-ld-context-lookup">JSON-LD Context Lookup</a></li>
+<li><a class="reference internal" href="#scrud-vue-component">SCRUD Vue Component</a></li>
+<li><a class="reference internal" href="#scrud-vue-layout-component">SCRUD Vue Layout Component</a></li>
+<li><a class="reference internal" href="#scrud-vue-pages">SCRUD Vue Pages</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="rbac.html"
+                        title="previous chapter">Attribute and Role-Based Access Control</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="scrud-ui.html"
+                        title="next chapter">&lt;no title&gt;</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/scrud-client.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="scrud-client">
+<h1>SCRUD Client<a class="headerlink" href="#scrud-client" title="Permalink to this headline">¶</a></h1>
+<p>The SCRUD Client will be a Nuxt application comprised of several parts.</p>
+<div class="section" id="caching-client">
+<h2>Caching Client<a class="headerlink" href="#caching-client" title="Permalink to this headline">¶</a></h2>
+<p>An <span class="xref std std-ref">envelopes</span> aware wrapper for the browser’s <cite>Cache</cite> API. All HTTP requests made
+by SCRUD Vue/Nuxt components will be made through the Caching Client. The Caching Client
+will notify components that are listening to a particular URL when the resource for that
+URL is known to have changed. The Caching Client will cache all <span class="xref std std-ref">envelopes</span>
+contained in a resource.</p>
+</div>
+<div class="section" id="json-ld-context-lookup">
+<h2>JSON-LD Context Lookup<a class="headerlink" href="#json-ld-context-lookup" title="Permalink to this headline">¶</a></h2>
+<p>This will provide a mechanism to lookup the RDF type for a given JSON property.</p>
+</div>
+<div class="section" id="scrud-vue-component">
+<h2>SCRUD Vue Component<a class="headerlink" href="#scrud-vue-component" title="Permalink to this headline">¶</a></h2>
+<p>This Vue component will accept a configuration mapping relating RDF Type URIs to Vue
+components responsible for rendering those RDF Types. The SCRUD Vue component will be
+nestable, as well, to support nested components that are themselves constructed from
+mappings from RDF types to other Vue components.</p>
+<p>This component may be an extension of the Vue JSON Schema Forms component.</p>
+</div>
+<div class="section" id="scrud-vue-layout-component">
+<h2>SCRUD Vue Layout Component<a class="headerlink" href="#scrud-vue-layout-component" title="Permalink to this headline">¶</a></h2>
+<p>This component will define complex layouts comprised of regular Vue components and
+nested SCRUD Vue components.</p>
+</div>
+<div class="section" id="scrud-vue-pages">
+<h2>SCRUD Vue Pages<a class="headerlink" href="#scrud-vue-pages" title="Permalink to this headline">¶</a></h2>
+<p>A SCRUD Vue page will be a Vue/Nuxt page addressable by URL that is comprised of a SCRUD
+Vue Layout and its associated SCRUD Vue components.</p>
+</div>
+</div>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="scrud-ui.html" title="&lt;no title&gt;"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="rbac.html" title="Attribute and Role-Based Access Control"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">OpenTeams SCRUD Technical Strategy 1.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">SCRUD Client</a></li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2020, OpenTeams Inc..
+    Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 3.1.2.Theme is <a href="http://github.com/vimalkvn/solar-theme">Solar</a>
+    </div>
+  </body>
+</html>
