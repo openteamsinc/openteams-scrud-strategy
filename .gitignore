@@ -1,0 +1,12 @@
+# vim swapfiles
+*.*.sw*
+*.sw*
+
+# sphinx build
+build/
+
+# nix shell configuration
+shell.nix
+
+# direnv configuration
+.envrc
