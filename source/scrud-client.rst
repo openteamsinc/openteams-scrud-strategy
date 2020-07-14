@@ -6,11 +6,11 @@ The SCRUD Client will be a Nuxt application comprised of several parts.
 Caching Client
 --------------
 
-An :ref:`envelopes` aware wrapper for the browser's `Cache` API. All HTTP requests made
-by SCRUD Vue/Nuxt components will be made through the Caching Client. The Caching Client
-will notify components that are listening to a particular URL when the resource for that
-URL is known to have changed. The Caching Client will cache all :ref:`envelopes`
-contained in a resource.
+An :ref:`envelopes <Envelope Properties>` aware wrapper for the browser's `Cache` API.
+All HTTP requests made by SCRUD Vue/Nuxt components will be made through the Caching
+Client. The Caching Client will notify components that are listening to a particular URL
+when the resource for that URL is known to have changed. The Caching Client will cache
+all :ref:`envelopes <Envelope Properties>` contained in a resource.
 
 JSON-LD Context Lookup
 ----------------------
