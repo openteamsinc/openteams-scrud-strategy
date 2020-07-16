@@ -1,10 +1,9 @@
-Envelope Properties
-===================
+# Envelope Properties
 
 RDF Type
   `https://api.openteams.com/json-ld/Envelope`
 
-An :ref:`Envelope Property <Envelope Properties>` is an encapsulation of an  HTTP
+An *Envelope Property* is an encapsulation of an  HTTP
 resource. The primary use-case for envelopes is listing, search, and query response
 resources. The envelop is a JSON object whose properties include the URL of the
 resource, the caching headers that were current for the resource when the resource was
@@ -14,15 +13,13 @@ Envelopes provide a simple mechanism to provide compound resources comprised of 
 included resources while enabling an envelope aware client the capability to maintain a
 coherent cache for all resources.
 
-Example
--------
+## Example
 
 The example below is a JSON envelope object of a resource. The `url` property is the URL
 of the resource whose content is contained in the `content` property. The
 `last-modified` and `etag` properties are the standard HTTP caching headers.
 
-.. sourcecode:: json
-   
+```json
    {
      "url": "https://openteams.com/profile/230"
      , "last_modified": "Mon, 13 July 2020 12:12:12 GMT"
@@ -32,12 +29,11 @@ of the resource whose content is contained in the `content` property. The
        , "name": "Some Name"
      }
    }
-  
-JSON Schema
------------
+```
 
-.. sourcecode:: json
-   
+## JSON Schema
+
+```json
    {
      "$id": "https://api.openteams.com/json-schema/Envelope"
      , "$schema": "http://json-schema.org/draft-04/schema"
@@ -59,13 +55,11 @@ JSON Schema
        }
      }
    }
+```
 
+## JSON-LD Context
 
-JSON-LD Context
----------------
-
-.. sourcecode:: json
-
+```json
    {
      "url": {
        "@id": "https://api.openteams.com/json-ld/Envelope/url"
@@ -82,3 +76,4 @@ JSON-LD Context
        "@id": "https://api.openteams.com/json-ld/Envelope/content"
      }
    }
+```

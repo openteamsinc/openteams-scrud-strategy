@@ -6,5 +6,8 @@ dependencies:
   - python=3.7
   - sphinx
   - sphinx-autobuild
+  - sphinxcontrib-bibtex
+  - myst-parser
+  - pip
   - pip:
     - solar-theme

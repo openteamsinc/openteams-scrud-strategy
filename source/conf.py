@@ -33,6 +33,8 @@ release = '1.0'
 extensions = [
     'sphinx.ext.githubpages',
     'sphinx.ext.autosectionlabel',
+    'myst_parser',
+    'sphinxcontrib.bibtex',
 ]
 
 # Add any paths that contain templates here, relative to this directory.
