@@ -32,7 +32,6 @@ release = '1.0'
 # ones.
 extensions = [
     'sphinx.ext.githubpages',
-    'sphinx.ext.autosectionlabel',
     'myst_parser',
     'sphinxcontrib.bibtex',
 ]

@@ -1,3 +1,4 @@
+(Motivation)=
 # Motivation
 
 In the coming months, OpenTeams is likely to grow rapidly in the number of supported
@@ -11,6 +12,7 @@ definition of new web services as trivial as defining a {ref}`JSON-Schema` and
 {ref}`JSON-LD` context for the desired web services, with basic CRUD support coming for
 free and basic UI rendering coming for free as well.
 
+(Proposal)=
 # Proposal
 
 Let's use the resources we have today to build this architecture in July so we can ramp

@@ -1,3 +1,4 @@
+(Overview)=
 # Overview
 
 A general purpose {ref}`REST` architecture is proposed for OpenTeams that enriches the
@@ -25,11 +26,3 @@ presenting, previewing, summarizing, and editing. This UI client will use the co
 caching client to maintain consistent renderings of individual resources through the
 application and will use the attribute and role-based access control architecture to
 determine what views are appropriate to display to the user based on authorization. 
-
-## SCRUD
-
-The Semantically enriched Create, Retrieve, Update, and Delete (SCRUD) architecture is
-specified in the [semantic-http-spec]
-(https://github.com/Quansight-Labs/semantic-http-spec) project. This architecture
-specifies the requirements for an HTTP {ref}`REST` API that satisfies SCRUD principles
-and is the basis for the technical strategy outlined in this document.

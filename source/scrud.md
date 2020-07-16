@@ -1,9 +1,17 @@
+(SCRUD)=
 # SCRUD 
 
-[SCRUD](https://github.com/Quansight-Labs/semantic-http-spec), Semantic Create Retrive
-Update and Delete, defines a set of standards for HTTP REST APIs. These standards make
-resources and services very discoverable by requiring specific support for the HTTP
-OPTIONS method as well as standard headers required for compliant APIs.
+```{rubric} Semantic Create, Retrieve, Update, and Delete
+```
+
+SCRUD is specified by the
+[semantic-http-spec](https://github.com/Quansight-Labs/semantic-http-spec), which
+defines a set of standards for HTTP REST APIs. This architecture specifies the
+requirements for an HTTP {ref}`REST` API that satisfies SCRUD principles and is the
+basis for the technical strategy outlined in this document.
+
+SCRUD makes resources and services very discoverable by requiring specific support for
+the HTTP OPTIONS method as well as standard headers required for compliant APIs.
 
 The result of the SCRUD standards is a base REST architecture intended to provide a rich
 foundation for access control and automated UI binding. This is achieved by providing a

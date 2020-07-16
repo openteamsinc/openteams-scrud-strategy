@@ -1,3 +1,4 @@
+(Envelope-Properties)=
 # Envelope Properties
 
 RDF Type
@@ -13,6 +14,7 @@ Envelopes provide a simple mechanism to provide compound resources comprised of 
 included resources while enabling an envelope aware client the capability to maintain a
 coherent cache for all resources.
 
+(Envelope-Properties-Example)=
 ## Example
 
 The example below is a JSON envelope object of a resource. The `url` property is the URL
@@ -31,6 +33,7 @@ of the resource whose content is contained in the `content` property. The
    }
 ```
 
+(Envelope-Properties-Schema)=
 ## JSON Schema
 
 ```json
@@ -57,6 +60,7 @@ of the resource whose content is contained in the `content` property. The
    }
 ```
 
+(Envelope Properties Context)=
 ## JSON-LD Context
 
 ```json

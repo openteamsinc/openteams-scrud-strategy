@@ -1,5 +1,7 @@
+(References)=
 # References
 
+(JSON-LD)=
 ## JSON-LD
 [The JSON Linked Data Standard](http://json-ld.org/)
 
@@ -7,6 +9,7 @@
 ## JSON Schema
 [The JSON Schema Standard](https://json-schema.org/)
 
+(REST)=
 ## REST
 Roy Fielding's PhD dissertation defining
 [Representational State Transfer](https://www.ics.uci.edu/~fielding/pubs/dissertation/rest_arch_style.htm)
