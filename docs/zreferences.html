@@ -3,7 +3,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta charset="utf-8" />
-    <title>Motivation &#8212; OpenTeams SCRUD Technical Strategy 1.0 documentation</title>
+    <title>References &#8212; OpenTeams SCRUD Technical Strategy 1.0 documentation</title>
     <link rel="stylesheet" href="_static/solar.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
@@ -13,8 +13,7 @@
     <script src="_static/language_data.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Overview" href="overview.html" />
-    <link rel="prev" title="OpenTeams SCRUD Technical Strategy" href="index.html" /><link href='http://fonts.googleapis.com/css?family=Source+Code+Pro|Open+Sans:300italic,400italic,700italic,400,300,700' rel='stylesheet' type='text/css'>
+    <link rel="prev" title="SCRUD Client" href="scrud-client.html" /><link href='http://fonts.googleapis.com/css?family=Source+Code+Pro|Open+Sans:300italic,400italic,700italic,400,300,700' rel='stylesheet' type='text/css'>
 <link href="_static/solarized-dark.css" rel="stylesheet">
   </head><body>
     <div class="related" role="navigation" aria-label="related navigation">
@@ -24,10 +23,7 @@
           <a href="genindex.html" title="General Index"
              accesskey="I">index</a></li>
         <li class="right" >
-          <a href="overview.html" title="Overview"
-             accesskey="N">next</a> |</li>
-        <li class="right" >
-          <a href="index.html" title="OpenTeams SCRUD Technical Strategy"
+          <a href="scrud-client.html" title="SCRUD Client"
              accesskey="P">previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="index.html">OpenTeams SCRUD Technical Strategy 1.0 documentation</a> &#187;</li> 
       </ul>
@@ -36,20 +32,21 @@
         <div class="sphinxsidebarwrapper">
   <h3><a href="index.html">Table of Contents</a></h3>
   <ul>
-<li><a class="reference internal" href="#">Motivation</a></li>
-<li><a class="reference internal" href="#proposal">Proposal</a></li>
+<li><a class="reference internal" href="#">References</a><ul>
+<li><a class="reference internal" href="#json-ld">JSON-LD</a></li>
+<li><a class="reference internal" href="#json-schema">JSON Schema</a></li>
+<li><a class="reference internal" href="#rest">REST</a></li>
+</ul>
+</li>
 </ul>
 
   <h4>Previous topic</h4>
-  <p class="topless"><a href="index.html"
-                        title="previous chapter">OpenTeams SCRUD Technical Strategy</a></p>
-  <h4>Next topic</h4>
-  <p class="topless"><a href="overview.html"
-                        title="next chapter">Overview</a></p>
+  <p class="topless"><a href="scrud-client.html"
+                        title="previous chapter">SCRUD Client</a></p>
   <div role="note" aria-label="source link">
     <h3>This Page</h3>
     <ul class="this-page-menu">
-      <li><a href="_sources/motivation.md.txt"
+      <li><a href="_sources/zreferences.md.txt"
             rel="nofollow">Show Source</a></li>
     </ul>
    </div>
@@ -71,23 +68,21 @@
         <div class="bodywrapper">
           <div class="body" role="main">
             
-  <div class="section" id="motivation">
-<span id="id1"></span><h1>Motivation<a class="headerlink" href="#motivation" title="Permalink to this headline">¶</a></h1>
-<p>In the coming months, OpenTeams is likely to grow rapidly in the number of supported
-Clients and Partners. As we grow, we’ll need to rapidly implement web services and
-supporting user interfaces. We need to be prepared to move quickly and adjust our
-designs and implementations quickly as we discover the requirements.</p>
-<p>This document will detail an architecture intended to help us move as quickly as
-possible while setting the stage for more advanced capability. The goal is to make the
-definition of new web services as trivial as defining a <a class="reference internal" href="zreferences.html#json-schema"><span class="std std-ref">JSON Schema</span></a> and
-<a class="reference internal" href="zreferences.html#json-ld"><span class="std std-ref">JSON-LD</span></a> context for the desired web services, with basic CRUD support coming for
-free and basic UI rendering coming for free as well.</p>
+  <div class="section" id="references">
+<span id="id1"></span><h1>References<a class="headerlink" href="#references" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="json-ld">
+<span id="id2"></span><h2>JSON-LD<a class="headerlink" href="#json-ld" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference external" href="http://json-ld.org/">The JSON Linked Data Standard</a></p>
 </div>
-<div class="section" id="proposal">
-<span id="id2"></span><h1>Proposal<a class="headerlink" href="#proposal" title="Permalink to this headline">¶</a></h1>
-<p>Let’s use the resources we have today to build this architecture in July so we can ramp
-up development in August with minimal resources needed. Let’s also lay an open source
-foundation that both OpenTeams and our Elite Partner Quansight can build on.</p>
+<div class="section" id="json-schema">
+<span id="id3"></span><h2>JSON Schema<a class="headerlink" href="#json-schema" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference external" href="https://json-schema.org/">The JSON Schema Standard</a></p>
+</div>
+<div class="section" id="rest">
+<span id="id4"></span><h2>REST<a class="headerlink" href="#rest" title="Permalink to this headline">¶</a></h2>
+<p>Roy Fielding’s PhD dissertation defining
+<a class="reference external" href="https://www.ics.uci.edu/~fielding/pubs/dissertation/rest_arch_style.htm">Representational State Transfer</a></p>
+</div>
 </div>
 
 
@@ -103,10 +98,7 @@ foundation that both OpenTeams and our Elite Partner Quansight can build on.</p>
           <a href="genindex.html" title="General Index"
              >index</a></li>
         <li class="right" >
-          <a href="overview.html" title="Overview"
-             >next</a> |</li>
-        <li class="right" >
-          <a href="index.html" title="OpenTeams SCRUD Technical Strategy"
+          <a href="scrud-client.html" title="SCRUD Client"
              >previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="index.html">OpenTeams SCRUD Technical Strategy 1.0 documentation</a> &#187;</li> 
       </ul>

@@ -1,9 +1,8 @@
 <!DOCTYPE html>
 
-<html>
+<html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Envelope Properties &#8212; OpenTeams SCRUD Technical Strategy 1.0 documentation</title>
     <link rel="stylesheet" href="_static/solar.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -15,7 +14,7 @@
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Attribute and Role-Based Access Control" href="rbac.html" />
-    <link rel="prev" title="SCRUD (Semantic Create Retrive Update and Delete)" href="scrud.html" /><link href='http://fonts.googleapis.com/css?family=Source+Code+Pro|Open+Sans:300italic,400italic,700italic,400,300,700' rel='stylesheet' type='text/css'>
+    <link rel="prev" title="SCRUD" href="scrud.html" /><link href='http://fonts.googleapis.com/css?family=Source+Code+Pro|Open+Sans:300italic,400italic,700italic,400,300,700' rel='stylesheet' type='text/css'>
 <link href="_static/solarized-dark.css" rel="stylesheet">
   </head><body>
     <div class="related" role="navigation" aria-label="related navigation">
@@ -28,10 +27,9 @@
           <a href="rbac.html" title="Attribute and Role-Based Access Control"
              accesskey="N">next</a> |</li>
         <li class="right" >
-          <a href="scrud.html" title="SCRUD (Semantic Create Retrive Update and Delete)"
+          <a href="scrud.html" title="SCRUD"
              accesskey="P">previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">OpenTeams SCRUD Technical Strategy 1.0 documentation</a> &#187;</li>
-        <li class="nav-item nav-item-this"><a href="">Envelope Properties</a></li> 
+        <li class="nav-item nav-item-0"><a href="index.html">OpenTeams SCRUD Technical Strategy 1.0 documentation</a> &#187;</li> 
       </ul>
     </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
@@ -48,14 +46,14 @@
 
   <h4>Previous topic</h4>
   <p class="topless"><a href="scrud.html"
-                        title="previous chapter">SCRUD (Semantic Create Retrive Update and Delete)</a></p>
+                        title="previous chapter">SCRUD</a></p>
   <h4>Next topic</h4>
   <p class="topless"><a href="rbac.html"
                         title="next chapter">Attribute and Role-Based Access Control</a></p>
   <div role="note" aria-label="source link">
     <h3>This Page</h3>
     <ul class="this-page-menu">
-      <li><a href="_sources/envelopes.rst.txt"
+      <li><a href="_sources/envelopes.md.txt"
             rel="nofollow">Show Source</a></li>
     </ul>
    </div>
@@ -78,12 +76,10 @@
           <div class="body" role="main">
             
   <div class="section" id="envelope-properties">
-<h1>Envelope Properties<a class="headerlink" href="#envelope-properties" title="Permalink to this headline">¶</a></h1>
-<dl class="simple">
-<dt>RDF Type</dt><dd><p><cite>https://api.openteams.com/json-ld/Envelope</cite></p>
-</dd>
-</dl>
-<p>An <span class="xref std std-ref">Envelope Property</span> is an encapsulation of an  HTTP
+<span id="id1"></span><h1>Envelope Properties<a class="headerlink" href="#envelope-properties" title="Permalink to this headline">¶</a></h1>
+<p>RDF Type
+<code class="docutils literal notranslate"><span class="pre">https://api.openteams.com/json-ld/Envelope</span></code></p>
+<p>An <em>Envelope Property</em> is an encapsulation of an  HTTP
 resource. The primary use-case for envelopes is listing, search, and query response
 resources. The envelop is a JSON object whose properties include the URL of the
 resource, the caching headers that were current for the resource when the resource was
@@ -92,73 +88,73 @@ retrieved, the required SCRUD headers, and the content of the resource.</p>
 included resources while enabling an envelope aware client the capability to maintain a
 coherent cache for all resources.</p>
 <div class="section" id="example">
-<h2>Example<a class="headerlink" href="#example" title="Permalink to this headline">¶</a></h2>
-<p>The example below is a JSON envelope object of a resource. The <cite>url</cite> property is the URL
-of the resource whose content is contained in the <cite>content</cite> property. The
-<cite>last-modified</cite> and <cite>etag</cite> properties are the standard HTTP caching headers.</p>
-<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
-  <span class="nt">&quot;url&quot;</span><span class="p">:</span> <span class="s2">&quot;https://openteams.com/profile/230&quot;</span>
-  <span class="p">,</span> <span class="nt">&quot;last_modified&quot;</span><span class="p">:</span> <span class="s2">&quot;Mon, 13 July 2020 12:12:12 GMT&quot;</span>
-  <span class="p">,</span> <span class="nt">&quot;etag&quot;</span><span class="p">:</span> <span class="s2">&quot;XXXXX&quot;</span>
-  <span class="p">,</span> <span class="nt">&quot;content&quot;</span><span class="p">:</span> <span class="p">{</span>
-    <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;230&quot;</span>
-    <span class="p">,</span> <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;Some Name&quot;</span>
-  <span class="p">}</span>
-<span class="p">}</span>
+<span id="envelope-properties-example"></span><h2>Example<a class="headerlink" href="#example" title="Permalink to this headline">¶</a></h2>
+<p>The example below is a JSON envelope object of a resource. The <code class="docutils literal notranslate"><span class="pre">url</span></code> property is the URL
+of the resource whose content is contained in the <code class="docutils literal notranslate"><span class="pre">content</span></code> property. The
+<code class="docutils literal notranslate"><span class="pre">last-modified</span></code> and <code class="docutils literal notranslate"><span class="pre">etag</span></code> properties are the standard HTTP caching headers.</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span>   <span class="p">{</span>
+     <span class="nt">&quot;url&quot;</span><span class="p">:</span> <span class="s2">&quot;https://openteams.com/profile/230&quot;</span>
+     <span class="p">,</span> <span class="nt">&quot;last_modified&quot;</span><span class="p">:</span> <span class="s2">&quot;Mon, 13 July 2020 12:12:12 GMT&quot;</span>
+     <span class="p">,</span> <span class="nt">&quot;etag&quot;</span><span class="p">:</span> <span class="s2">&quot;XXXXX&quot;</span>
+     <span class="p">,</span> <span class="nt">&quot;content&quot;</span><span class="p">:</span> <span class="p">{</span>
+       <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;230&quot;</span>
+       <span class="p">,</span> <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;Some Name&quot;</span>
+     <span class="p">}</span>
+   <span class="p">}</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="json-schema">
-<h2>JSON Schema<a class="headerlink" href="#json-schema" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
-  <span class="nt">&quot;$id&quot;</span><span class="p">:</span> <span class="s2">&quot;https://api.openteams.com/json-schema/Envelope&quot;</span>
-  <span class="p">,</span> <span class="nt">&quot;$schema&quot;</span><span class="p">:</span> <span class="s2">&quot;http://json-schema.org/draft-04/schema&quot;</span>
-  <span class="p">,</span> <span class="nt">&quot;title&quot;</span><span class="p">:</span> <span class="s2">&quot;Resource Envelope&quot;</span>
-  <span class="p">,</span> <span class="nt">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;A resource wrapper providing the url and http caching headers for a contained resource&quot;</span>
-  <span class="p">,</span> <span class="nt">&quot;properties&quot;</span><span class="p">:</span> <span class="p">{</span>
-    <span class="nt">&quot;url&quot;</span><span class="p">:</span> <span class="p">{</span>
-      <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;string&quot;</span>
-      <span class="p">,</span> <span class="nt">&quot;format&quot;</span><span class="p">:</span> <span class="s2">&quot;uri&quot;</span>
-    <span class="p">}</span>
-    <span class="p">,</span> <span class="nt">&quot;last_modified&quot;</span><span class="p">:</span> <span class="p">{</span>
-      <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;string&quot;</span>
-    <span class="p">}</span>
-    <span class="p">,</span> <span class="nt">&quot;etag&quot;</span><span class="p">:</span> <span class="p">{</span>
-      <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;string&quot;</span>
-    <span class="p">}</span>
-    <span class="p">,</span> <span class="nt">&quot;content&quot;</span><span class="p">:</span> <span class="p">{</span>
-      <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;object&quot;</span><span class="p">,</span> <span class="s2">&quot;array&quot;</span><span class="p">,</span> <span class="s2">&quot;string&quot;</span><span class="p">,</span> <span class="s2">&quot;number&quot;</span><span class="p">,</span> <span class="s2">&quot;boolean&quot;</span><span class="p">]</span>
-    <span class="p">}</span>
-  <span class="p">}</span>
-<span class="p">}</span>
+<span id="envelope-properties-schema"></span><h2>JSON Schema<a class="headerlink" href="#json-schema" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span>   <span class="p">{</span>
+     <span class="nt">&quot;$id&quot;</span><span class="p">:</span> <span class="s2">&quot;https://api.openteams.com/json-schema/Envelope&quot;</span>
+     <span class="p">,</span> <span class="nt">&quot;$schema&quot;</span><span class="p">:</span> <span class="s2">&quot;http://json-schema.org/draft-04/schema&quot;</span>
+     <span class="p">,</span> <span class="nt">&quot;title&quot;</span><span class="p">:</span> <span class="s2">&quot;Resource Envelope&quot;</span>
+     <span class="p">,</span> <span class="nt">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;A resource wrapper providing the url and http caching headers for a contained resource&quot;</span>
+     <span class="p">,</span> <span class="nt">&quot;properties&quot;</span><span class="p">:</span> <span class="p">{</span>
+       <span class="nt">&quot;url&quot;</span><span class="p">:</span> <span class="p">{</span>
+         <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;string&quot;</span>
+         <span class="p">,</span> <span class="nt">&quot;format&quot;</span><span class="p">:</span> <span class="s2">&quot;uri&quot;</span>
+       <span class="p">}</span>
+       <span class="p">,</span> <span class="nt">&quot;last_modified&quot;</span><span class="p">:</span> <span class="p">{</span>
+         <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;string&quot;</span>
+       <span class="p">}</span>
+       <span class="p">,</span> <span class="nt">&quot;etag&quot;</span><span class="p">:</span> <span class="p">{</span>
+         <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;string&quot;</span>
+       <span class="p">}</span>
+       <span class="p">,</span> <span class="nt">&quot;content&quot;</span><span class="p">:</span> <span class="p">{</span>
+         <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;object&quot;</span><span class="p">,</span> <span class="s2">&quot;array&quot;</span><span class="p">,</span> <span class="s2">&quot;string&quot;</span><span class="p">,</span> <span class="s2">&quot;number&quot;</span><span class="p">,</span> <span class="s2">&quot;boolean&quot;</span><span class="p">]</span>
+       <span class="p">}</span>
+     <span class="p">}</span>
+   <span class="p">}</span>
 </pre></div>
 </div>
+<p>(Envelope Properties Context)=</p>
 </div>
 <div class="section" id="json-ld-context">
 <h2>JSON-LD Context<a class="headerlink" href="#json-ld-context" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
-  <span class="nt">&quot;url&quot;</span><span class="p">:</span> <span class="p">{</span>
-    <span class="nt">&quot;@id&quot;</span><span class="p">:</span> <span class="s2">&quot;https://api.openteams.com/json-ld/Envelope/url&quot;</span>
-    <span class="p">,</span> <span class="nt">&quot;https://www.w3.org/TR/rdf-schema/#ch_subclassof&quot;</span><span class="p">:</span>
-        <span class="s2">&quot;https://www.w3.org/TR/HTTP-in-RDF10/#absoluteURIProperty&quot;</span>
-  <span class="p">}</span>
-  <span class="p">,</span> <span class="nt">&quot;last_modified&quot;</span><span class="p">:</span> <span class="p">{</span>
-    <span class="nt">&quot;@id&quot;</span><span class="p">:</span> <span class="s2">&quot;https://api.openteams.com/json-ld/Envelope/last_modified&quot;</span>
-  <span class="p">}</span>
-  <span class="p">,</span> <span class="nt">&quot;etag&quot;</span><span class="p">:</span> <span class="p">{</span>
-    <span class="nt">&quot;@id&quot;</span><span class="p">:</span> <span class="s2">&quot;https://api.openteams.com/json-ld/Envelope/etag&quot;</span>
-  <span class="p">}</span>
-  <span class="p">,</span> <span class="nt">&quot;content&quot;</span><span class="p">:</span> <span class="p">{</span>
-    <span class="nt">&quot;@id&quot;</span><span class="p">:</span> <span class="s2">&quot;https://api.openteams.com/json-ld/Envelope/content&quot;</span>
-  <span class="p">}</span>
-<span class="p">}</span>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span>   <span class="p">{</span>
+     <span class="nt">&quot;url&quot;</span><span class="p">:</span> <span class="p">{</span>
+       <span class="nt">&quot;@id&quot;</span><span class="p">:</span> <span class="s2">&quot;https://api.openteams.com/json-ld/Envelope/url&quot;</span>
+       <span class="p">,</span> <span class="nt">&quot;https://www.w3.org/TR/rdf-schema/#ch_subclassof&quot;</span><span class="p">:</span>
+           <span class="s2">&quot;https://www.w3.org/TR/HTTP-in-RDF10/#absoluteURIProperty&quot;</span>
+     <span class="p">}</span>
+     <span class="p">,</span> <span class="nt">&quot;last_modified&quot;</span><span class="p">:</span> <span class="p">{</span>
+       <span class="nt">&quot;@id&quot;</span><span class="p">:</span> <span class="s2">&quot;https://api.openteams.com/json-ld/Envelope/last_modified&quot;</span>
+     <span class="p">}</span>
+     <span class="p">,</span> <span class="nt">&quot;etag&quot;</span><span class="p">:</span> <span class="p">{</span>
+       <span class="nt">&quot;@id&quot;</span><span class="p">:</span> <span class="s2">&quot;https://api.openteams.com/json-ld/Envelope/etag&quot;</span>
+     <span class="p">}</span>
+     <span class="p">,</span> <span class="nt">&quot;content&quot;</span><span class="p">:</span> <span class="p">{</span>
+       <span class="nt">&quot;@id&quot;</span><span class="p">:</span> <span class="s2">&quot;https://api.openteams.com/json-ld/Envelope/content&quot;</span>
+     <span class="p">}</span>
+   <span class="p">}</span>
 </pre></div>
 </div>
 </div>
 </div>
 
 
-            <div class="clearer"></div>
           </div>
         </div>
       </div>
@@ -174,15 +170,14 @@ of the resource whose content is contained in the <cite>content</cite> property.
           <a href="rbac.html" title="Attribute and Role-Based Access Control"
              >next</a> |</li>
         <li class="right" >
-          <a href="scrud.html" title="SCRUD (Semantic Create Retrive Update and Delete)"
+          <a href="scrud.html" title="SCRUD"
              >previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">OpenTeams SCRUD Technical Strategy 1.0 documentation</a> &#187;</li>
-        <li class="nav-item nav-item-this"><a href="">Envelope Properties</a></li> 
+        <li class="nav-item nav-item-0"><a href="index.html">OpenTeams SCRUD Technical Strategy 1.0 documentation</a> &#187;</li> 
       </ul>
     </div>
     <div class="footer">
         &copy; Copyright 2020, OpenTeams Inc..
-    Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 3.1.2.Theme is <a href="http://github.com/vimalkvn/solar-theme">Solar</a>
+    Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 2.4.4.Theme is <a href="http://github.com/vimalkvn/solar-theme">Solar</a>
     </div>
   </body>
 </html>

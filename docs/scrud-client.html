@@ -1,9 +1,8 @@
 <!DOCTYPE html>
 
-<html>
+<html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SCRUD Client &#8212; OpenTeams SCRUD Technical Strategy 1.0 documentation</title>
     <link rel="stylesheet" href="_static/solar.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -14,7 +13,7 @@
     <script src="_static/language_data.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="References" href="references.html" />
+    <link rel="next" title="References" href="zreferences.html" />
     <link rel="prev" title="Attribute and Role-Based Access Control" href="rbac.html" /><link href='http://fonts.googleapis.com/css?family=Source+Code+Pro|Open+Sans:300italic,400italic,700italic,400,300,700' rel='stylesheet' type='text/css'>
 <link href="_static/solarized-dark.css" rel="stylesheet">
   </head><body>
@@ -25,13 +24,12 @@
           <a href="genindex.html" title="General Index"
              accesskey="I">index</a></li>
         <li class="right" >
-          <a href="references.html" title="References"
+          <a href="zreferences.html" title="References"
              accesskey="N">next</a> |</li>
         <li class="right" >
           <a href="rbac.html" title="Attribute and Role-Based Access Control"
              accesskey="P">previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">OpenTeams SCRUD Technical Strategy 1.0 documentation</a> &#187;</li>
-        <li class="nav-item nav-item-this"><a href="">SCRUD Client</a></li> 
+        <li class="nav-item nav-item-0"><a href="index.html">OpenTeams SCRUD Technical Strategy 1.0 documentation</a> &#187;</li> 
       </ul>
     </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
@@ -52,12 +50,12 @@
   <p class="topless"><a href="rbac.html"
                         title="previous chapter">Attribute and Role-Based Access Control</a></p>
   <h4>Next topic</h4>
-  <p class="topless"><a href="references.html"
+  <p class="topless"><a href="zreferences.html"
                         title="next chapter">References</a></p>
   <div role="note" aria-label="source link">
     <h3>This Page</h3>
     <ul class="this-page-menu">
-      <li><a href="_sources/scrud-client.rst.txt"
+      <li><a href="_sources/scrud-client.md.txt"
             rel="nofollow">Show Source</a></li>
     </ul>
    </div>
@@ -80,22 +78,22 @@
           <div class="body" role="main">
             
   <div class="section" id="scrud-client">
-<h1>SCRUD Client<a class="headerlink" href="#scrud-client" title="Permalink to this headline">¶</a></h1>
+<span id="id1"></span><h1>SCRUD Client<a class="headerlink" href="#scrud-client" title="Permalink to this headline">¶</a></h1>
 <p>The SCRUD Client will be a Nuxt application comprised of several parts.</p>
 <div class="section" id="caching-client">
-<h2>Caching Client<a class="headerlink" href="#caching-client" title="Permalink to this headline">¶</a></h2>
-<p>An <span class="xref std std-ref">envelopes</span> aware wrapper for the browser’s <cite>Cache</cite> API. All HTTP requests made
-by SCRUD Vue/Nuxt components will be made through the Caching Client. The Caching Client
-will notify components that are listening to a particular URL when the resource for that
-URL is known to have changed. The Caching Client will cache all <span class="xref std std-ref">envelopes</span>
-contained in a resource.</p>
+<span id="id2"></span><h2>Caching Client<a class="headerlink" href="#caching-client" title="Permalink to this headline">¶</a></h2>
+<p>An <a class="reference internal" href="envelopes.html#envelope-properties"><span class="std std-ref">envelopes</span></a> aware wrapper for the browser’s <code class="docutils literal notranslate"><span class="pre">Cache</span></code> API.
+All HTTP requests made by SCRUD Vue/Nuxt components will be made through the Caching
+Client. The Caching Client will notify components that are listening to a particular URL
+when the resource for that URL is known to have changed. The Caching Client will cache
+all <a class="reference internal" href="envelopes.html#envelope-properties"><span class="std std-ref">envelopes</span></a> contained in a resource.</p>
 </div>
 <div class="section" id="json-ld-context-lookup">
-<h2>JSON-LD Context Lookup<a class="headerlink" href="#json-ld-context-lookup" title="Permalink to this headline">¶</a></h2>
+<span id="id3"></span><h2>JSON-LD Context Lookup<a class="headerlink" href="#json-ld-context-lookup" title="Permalink to this headline">¶</a></h2>
 <p>This will provide a mechanism to lookup the RDF type for a given JSON property.</p>
 </div>
 <div class="section" id="scrud-vue-component">
-<h2>SCRUD Vue Component<a class="headerlink" href="#scrud-vue-component" title="Permalink to this headline">¶</a></h2>
+<span id="id4"></span><h2>SCRUD Vue Component<a class="headerlink" href="#scrud-vue-component" title="Permalink to this headline">¶</a></h2>
 <p>This Vue component will accept a configuration mapping relating RDF Type URIs to Vue
 components responsible for rendering those RDF Types. The SCRUD Vue component will be
 nestable, as well, to support nested components that are themselves constructed from
@@ -103,19 +101,18 @@ mappings from RDF types to other Vue components.</p>
 <p>This component may be an extension of the Vue JSON Schema Forms component.</p>
 </div>
 <div class="section" id="scrud-vue-layout-component">
-<h2>SCRUD Vue Layout Component<a class="headerlink" href="#scrud-vue-layout-component" title="Permalink to this headline">¶</a></h2>
+<span id="id5"></span><h2>SCRUD Vue Layout Component<a class="headerlink" href="#scrud-vue-layout-component" title="Permalink to this headline">¶</a></h2>
 <p>This component will define complex layouts comprised of regular Vue components and
 nested SCRUD Vue components.</p>
 </div>
 <div class="section" id="scrud-vue-pages">
-<h2>SCRUD Vue Pages<a class="headerlink" href="#scrud-vue-pages" title="Permalink to this headline">¶</a></h2>
+<span id="id6"></span><h2>SCRUD Vue Pages<a class="headerlink" href="#scrud-vue-pages" title="Permalink to this headline">¶</a></h2>
 <p>A SCRUD Vue page will be a Vue/Nuxt page addressable by URL that is comprised of a SCRUD
 Vue Layout and its associated SCRUD Vue components.</p>
 </div>
 </div>
 
 
-            <div class="clearer"></div>
           </div>
         </div>
       </div>
@@ -128,18 +125,17 @@ Vue Layout and its associated SCRUD Vue components.</p>
           <a href="genindex.html" title="General Index"
              >index</a></li>
         <li class="right" >
-          <a href="references.html" title="References"
+          <a href="zreferences.html" title="References"
              >next</a> |</li>
         <li class="right" >
           <a href="rbac.html" title="Attribute and Role-Based Access Control"
              >previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">OpenTeams SCRUD Technical Strategy 1.0 documentation</a> &#187;</li>
-        <li class="nav-item nav-item-this"><a href="">SCRUD Client</a></li> 
+        <li class="nav-item nav-item-0"><a href="index.html">OpenTeams SCRUD Technical Strategy 1.0 documentation</a> &#187;</li> 
       </ul>
     </div>
     <div class="footer">
         &copy; Copyright 2020, OpenTeams Inc..
-    Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 3.1.2.Theme is <a href="http://github.com/vimalkvn/solar-theme">Solar</a>
+    Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 2.4.4.Theme is <a href="http://github.com/vimalkvn/solar-theme">Solar</a>
     </div>
   </body>
 </html>
