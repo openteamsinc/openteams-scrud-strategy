@@ -12,6 +12,7 @@ scrud
 envelopes
 rbac
 scrud-client
+scenarios
 zreferences
 ```
 

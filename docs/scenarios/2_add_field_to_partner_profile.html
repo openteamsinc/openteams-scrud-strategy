@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>Add a field to the Partner Profile resource type &#8212; OpenTeams SCRUD Technical Strategy 1.0 documentation</title>
+    <link rel="stylesheet" href="../_static/solar.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Define a new Client Profile resource type" href="3_new_client_profile.html" />
+    <link rel="prev" title="Define a new Partner Profile resource type" href="1_new_partner_profile.html" /><link href='http://fonts.googleapis.com/css?family=Source+Code+Pro|Open+Sans:300italic,400italic,700italic,400,300,700' rel='stylesheet' type='text/css'>
+<link href="../_static/solarized-dark.css" rel="stylesheet">
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="3_new_client_profile.html" title="Define a new Client Profile resource type"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="1_new_partner_profile.html" title="Define a new Partner Profile resource type"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">OpenTeams SCRUD Technical Strategy 1.0 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../scenarios.html" accesskey="U">Ilustrative Scenarios for SCRUD</a> &#187;</li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../index.html">Table of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Add a field to the Partner Profile resource type</a><ul>
+<li><a class="reference internal" href="#updating-the-json-schema">Updating the JSON Schema</a></li>
+<li><a class="reference internal" href="#updating-the-json-ld-context">Updating the JSON-LD Context</a></li>
+<li><a class="reference internal" href="#observe-the-changes-in-the-rest-api">Observe the changes in the REST API</a><ul>
+<li><a class="reference internal" href="#get-the-options-for-a-partner-profile-resource">Get the OPTIONS for a Partner Profile resource</a></li>
+<li><a class="reference internal" href="#get-the-json-schema-for-a-partner-profile-resource">GET the JSON Schema for a Partner Profile resource</a></li>
+<li><a class="reference internal" href="#get-the-json-ld-for-a-partner-profile-resource">GET the JSON-LD for a Partner Profile resource</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#observe-the-changes-in-the-ui">Observe the changes in the UI</a><ul>
+<li><a class="reference internal" href="#get-a-listing-of-partner-profile-resources">Get a listing of Partner Profile resources</a></li>
+<li><a class="reference internal" href="#view-an-individual-partner-profile-resource">View an individual Partner Profile resource</a></li>
+<li><a class="reference internal" href="#edit-an-individual-partner-profile-resource">Edit an individual Partner Profile resource</a></li>
+<li><a class="reference internal" href="#create-a-new-partner-profile-resource">Create a new Partner Profile resource</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="1_new_partner_profile.html"
+                        title="previous chapter">Define a new Partner Profile resource type</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="3_new_client_profile.html"
+                        title="next chapter">Define a new Client Profile resource type</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/scenarios/2_add_field_to_partner_profile.md.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="add-a-field-to-the-partner-profile-resource-type">
+<h1>Add a field to the Partner Profile resource type<a class="headerlink" href="#add-a-field-to-the-partner-profile-resource-type" title="Permalink to this headline">¶</a></h1>
+<p>This scenario will demonstrate the value of the SCRUD architecture by defining a new
+field for the Partner Profile resource. The result will be automatic default support for
+the new field in both the <code class="docutils literal notranslate"><span class="pre">scrud-django</span></code> and <code class="docutils literal notranslate"><span class="pre">scrud-vue</span></code> tools.</p>
+<div class="admonition-todo admonition" id="id1">
+<p class="admonition-title">Todo</p>
+<p>Figure out how versioning should work. In this scenario, we run up against it - there
+will be existing resources that are missing the new property. We could require
+registrations to include revisions and imply that any update to a resource <strong>MUST</strong>
+upgrade it to the most recent revision. We could also require a migration, at some
+point… but that’s a bit onerous to start…</p>
+</div>
+<div class="section" id="updating-the-json-schema">
+<h2>Updating the JSON Schema<a class="headerlink" href="#updating-the-json-schema" title="Permalink to this headline">¶</a></h2>
+<div class="admonition-todo admonition" id="id2">
+<p class="admonition-title">Todo</p>
+<p>Link to previous, highlight the added field</p>
+</div>
+</div>
+<div class="section" id="updating-the-json-ld-context">
+<h2>Updating the JSON-LD Context<a class="headerlink" href="#updating-the-json-ld-context" title="Permalink to this headline">¶</a></h2>
+<div class="admonition-todo admonition" id="id3">
+<p class="admonition-title">Todo</p>
+<p>Link to previous, highlight the added field</p>
+</div>
+</div>
+<div class="section" id="observe-the-changes-in-the-rest-api">
+<h2>Observe the changes in the REST API<a class="headerlink" href="#observe-the-changes-in-the-rest-api" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="get-the-options-for-a-partner-profile-resource">
+<h3>Get the OPTIONS for a Partner Profile resource<a class="headerlink" href="#get-the-options-for-a-partner-profile-resource" title="Permalink to this headline">¶</a></h3>
+<div class="admonition-todo admonition" id="id4">
+<p class="admonition-title">Todo</p>
+<p>Add http traces</p>
+</div>
+</div>
+<div class="section" id="get-the-json-schema-for-a-partner-profile-resource">
+<h3>GET the JSON Schema for a Partner Profile resource<a class="headerlink" href="#get-the-json-schema-for-a-partner-profile-resource" title="Permalink to this headline">¶</a></h3>
+<div class="admonition-todo admonition" id="id5">
+<p class="admonition-title">Todo</p>
+<p>Add http traces</p>
+</div>
+</div>
+<div class="section" id="get-the-json-ld-for-a-partner-profile-resource">
+<h3>GET the JSON-LD for a Partner Profile resource<a class="headerlink" href="#get-the-json-ld-for-a-partner-profile-resource" title="Permalink to this headline">¶</a></h3>
+<div class="admonition-todo admonition" id="id6">
+<p class="admonition-title">Todo</p>
+<p>Add http traces</p>
+</div>
+</div>
+</div>
+<div class="section" id="observe-the-changes-in-the-ui">
+<h2>Observe the changes in the UI<a class="headerlink" href="#observe-the-changes-in-the-ui" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="get-a-listing-of-partner-profile-resources">
+<h3>Get a listing of Partner Profile resources<a class="headerlink" href="#get-a-listing-of-partner-profile-resources" title="Permalink to this headline">¶</a></h3>
+<div class="admonition-todo admonition" id="id7">
+<p class="admonition-title">Todo</p>
+<p>Mock up some screens, for now</p>
+</div>
+</div>
+<div class="section" id="view-an-individual-partner-profile-resource">
+<h3>View an individual Partner Profile resource<a class="headerlink" href="#view-an-individual-partner-profile-resource" title="Permalink to this headline">¶</a></h3>
+<div class="admonition-todo admonition" id="id8">
+<p class="admonition-title">Todo</p>
+<p>Mock up some screens, for now</p>
+</div>
+</div>
+<div class="section" id="edit-an-individual-partner-profile-resource">
+<h3>Edit an individual Partner Profile resource<a class="headerlink" href="#edit-an-individual-partner-profile-resource" title="Permalink to this headline">¶</a></h3>
+<div class="admonition-todo admonition" id="id9">
+<p class="admonition-title">Todo</p>
+<p>Mock up some screens, for now</p>
+</div>
+</div>
+<div class="section" id="create-a-new-partner-profile-resource">
+<h3>Create a new Partner Profile resource<a class="headerlink" href="#create-a-new-partner-profile-resource" title="Permalink to this headline">¶</a></h3>
+<div class="admonition-todo admonition" id="id10">
+<p class="admonition-title">Todo</p>
+<p>Mock up some screens, for now</p>
+</div>
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="3_new_client_profile.html" title="Define a new Client Profile resource type"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="1_new_partner_profile.html" title="Define a new Partner Profile resource type"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">OpenTeams SCRUD Technical Strategy 1.0 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../scenarios.html" >Ilustrative Scenarios for SCRUD</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2020, OpenTeams Inc..
+    Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 2.4.4.Theme is <a href="http://github.com/vimalkvn/solar-theme">Solar</a>
+    </div>
+  </body>
+</html>
