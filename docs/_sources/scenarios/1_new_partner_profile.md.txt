@@ -31,10 +31,6 @@ defined by the combination of the JSON Schema and JSON-LD schema that satisfies 
 
 ### Defining the JSON Schema
 
-```{todo}
-Define the schema, add some text
-```
-
 ```json
 {
   "$id": "https://api.openteams.com/json-schema/PartnerProfile"
@@ -69,16 +65,12 @@ Define the schema, add some text
 
 ### Defining the JSON-LD Context
 
-```{todo}
-Define the context, add soem text
-```
-
 ```json
 {
   "schema": "http://schema.org/"
-  "openteams": "http://api.openteams.com/json-ld/"
-  "@type": "schema:Organization"
-  "name": {
+  , "openteams": "http://api.openteams.com/json-ld/"
+  , "@type": "schema:Organization"
+  , "name": {
     "@id": "schema:legalName"
   }
   , "display_name": {
@@ -117,15 +109,7 @@ register_resource_type(
 
 ## Using the Partner Profile REST API
 
-```{todo}
-Show HTTP traces
-```
-
 ### Get a listing of the existing Partner Profile resources
-
-```{todo}
-Add http traces
-```
 
 #### Request
 
@@ -142,7 +126,10 @@ HTTP/1.1 200 OK
 Content-Type: application/json
 Date: Wed, 22 Jul 2020 12:12:12 GMT
 Last-Modified: Tue, 21 Jul 2020 12:12:12 GMT
-ETag: XXXXX
+ETag: "XXXXX"
+Link: <https://api.openteams.com/json-schema/PartnerProfile-Listing>; rel="describedBy"
+Link: <https://api.openteams.com/json-ld/PartnerProfile-Listing>;
+      rel="http://www.w3.org/ns/json-ld#context"; type="application/ld+json"
 
 {
   "count": 1
@@ -183,7 +170,10 @@ HTTP/1.1 200 OK
 Content-Type: application/json
 Date: Wed, 22 Jul 2020 12:12:12 GMT
 Last-Modified: Tue, 21 Jul 2020 12:12:12 GMT
-ETag: XXXXX
+ETag: "XXXXX"
+Link: <http://scrud.io/schemas/semantic_http.json>; rel=”describedby”
+Link: <http://scrud.io/contexts/semantic_http.json>;
+      rel="http://www.w3.org/ns/json-ld#context"; type="application/ld+json"
 
 {
    "get": {
@@ -269,10 +259,6 @@ ETag: XXXXX
 
 ### POST a new Partner Profile resource
 
-```{todo}
-Add http traces
-```
-
 #### Request
 
 ```http
@@ -295,7 +281,7 @@ HTTP/1.1 201 Created
 Content-Type: application/json
 Date: Wed, 22 Jul 2020 12:12:12 GMT
 Last-Modified: Wed, 22 Jul 2020 12:12:12 GMT
-ETag: YYYYY
+ETag: "YYYYY"
 Location: https://backend.openteams.com/partner-profiles/safety-dancers
 
 {
@@ -308,10 +294,6 @@ Location: https://backend.openteams.com/partner-profiles/safety-dancers
 ```
 
 ### GET the resulting Partner Profile resource
-
-```{todo}
-Add http traces
-```
 
 #### Request
 
@@ -328,6 +310,9 @@ HTTP/1.1 200 OK
 Content-Type: application/json
 Date: Wed, 22 Jul 2020 13:13:13 GMT
 Last-Modified: Wed, 22 Jul 2020 12:12:12 GMT
+Link: <https://api.openteams.com/json-schema/PartnerProfile>; rel="describedBy"
+Link: <https://api.openteams.com/json-ld/PartnerProfile>;
+      rel="http://www.w3.org/ns/json-ld#context"; type="application/ld+json"
 
 {
   "name": "Safety Dancers, Inc."
@@ -339,10 +324,6 @@ Last-Modified: Wed, 22 Jul 2020 12:12:12 GMT
 ```
 
 ### GET the listing of Partner Profile resources and see the new resource
-
-```{todo}
-Add http traces
-```
 
 #### Request
 
@@ -359,7 +340,10 @@ HTTP/1.1 200 OK
 Content-Type: application/json
 Date: Wed, 22 Jul 2020 12:12:12 GMT
 Last-Modified: Tue, 21 Jul 2020 12:12:12 GMT
-ETag: XXXXX
+ETag: "XXXXX"
+Link: <https://api.openteams.com/json-schema/PartnerProfile-Listing>; rel="describedBy"
+Link: <https://api.openteams.com/json-ld/PartnerProfile-Listing>;
+      rel="http://www.w3.org/ns/json-ld#context"; type="application/ld+json"
 
 {
   "count": 2
@@ -398,10 +382,6 @@ ETag: XXXXX
 
 ### Get the OPTIONS for the Partner Profile resource
 
-```{todo}
-Add http traces
-```
-
 #### Request
 
 ```http
@@ -417,7 +397,10 @@ HTTP/1.1 200 OK
 Content-Type: application/json
 Date: Wed, 22 Jul 2020 13:13:13 GMT
 Last-Modified: Tue, 21 Jul 2020 12:12:12 GMT
-ETag: XXXXX
+ETag: "XXXXX"
+Link: <http://scrud.io/schemas/semantic_http.json>; rel=”describedby”
+Link: <http://scrud.io/contexts/semantic_http.json>;
+      rel="http://www.w3.org/ns/json-ld#context"; type="application/ld+json"
 
 {
    "get": {

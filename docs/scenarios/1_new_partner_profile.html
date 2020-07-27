@@ -52,28 +52,28 @@
 </ul>
 </li>
 <li><a class="reference internal" href="#get-the-options-for-the-partner-profile-listing-resource">Get the OPTIONS for the Partner Profile listing resource</a><ul>
+<li><a class="reference internal" href="#id2">Request</a></li>
+<li><a class="reference internal" href="#id3">Response</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#post-a-new-partner-profile-resource">POST a new Partner Profile resource</a><ul>
+<li><a class="reference internal" href="#id4">Request</a></li>
+<li><a class="reference internal" href="#id5">Response</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#get-the-resulting-partner-profile-resource">GET the resulting Partner Profile resource</a><ul>
 <li><a class="reference internal" href="#id6">Request</a></li>
 <li><a class="reference internal" href="#id7">Response</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#post-a-new-partner-profile-resource">POST a new Partner Profile resource</a><ul>
-<li><a class="reference internal" href="#id9">Request</a></li>
-<li><a class="reference internal" href="#id10">Response</a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#get-the-resulting-partner-profile-resource">GET the resulting Partner Profile resource</a><ul>
-<li><a class="reference internal" href="#id12">Request</a></li>
-<li><a class="reference internal" href="#id13">Response</a></li>
-</ul>
-</li>
 <li><a class="reference internal" href="#get-the-listing-of-partner-profile-resources-and-see-the-new-resource">GET the listing of Partner Profile resources and see the new resource</a><ul>
-<li><a class="reference internal" href="#id15">Request</a></li>
-<li><a class="reference internal" href="#id16">Response</a></li>
+<li><a class="reference internal" href="#id8">Request</a></li>
+<li><a class="reference internal" href="#id9">Response</a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#get-the-options-for-the-partner-profile-resource">Get the OPTIONS for the Partner Profile resource</a><ul>
-<li><a class="reference internal" href="#id18">Request</a></li>
-<li><a class="reference internal" href="#id19">Response</a></li>
+<li><a class="reference internal" href="#id10">Request</a></li>
+<li><a class="reference internal" href="#id11">Response</a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#put-an-update-to-the-partner-profile-resource">PUT an update to the Partner Profile resource</a></li>
@@ -91,9 +91,9 @@
 <li><a class="reference internal" href="#defining-the-new-vue-component">Defining the new Vue component</a></li>
 <li><a class="reference internal" href="#registering-the-new-vue-component">Registering the new Vue component</a></li>
 <li><a class="reference internal" href="#the-new-ui-after-customization">The new UI after customization</a><ul>
-<li><a class="reference internal" href="#id31">View an individual Partner Profile resource</a></li>
-<li><a class="reference internal" href="#id33">Edit an individual Partner Profile resource</a></li>
-<li><a class="reference internal" href="#id35">Create a new Partner Profile resource</a></li>
+<li><a class="reference internal" href="#id23">View an individual Partner Profile resource</a></li>
+<li><a class="reference internal" href="#id25">Edit an individual Partner Profile resource</a></li>
+<li><a class="reference internal" href="#id27">Create a new Partner Profile resource</a></li>
 </ul>
 </li>
 </ul>
@@ -164,10 +164,6 @@ defined by the combination of the JSON Schema and JSON-LD schema that satisfies 
 <code class="docutils literal notranslate"><span class="pre">semanantic-http-spec</span></code> standard.</p>
 <div class="section" id="defining-the-json-schema">
 <h3>Defining the JSON Schema<a class="headerlink" href="#defining-the-json-schema" title="Permalink to this headline">¶</a></h3>
-<div class="admonition-todo admonition" id="id1">
-<p class="admonition-title">Todo</p>
-<p>Define the schema, add some text</p>
-</div>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
   <span class="nt">&quot;$id&quot;</span><span class="p">:</span> <span class="s2">&quot;https://api.openteams.com/json-schema/PartnerProfile&quot;</span>
   <span class="p">,</span> <span class="nt">&quot;$schema&quot;</span><span class="p">:</span> <span class="s2">&quot;http://json-schema.org/draft-04/schema&quot;</span>
@@ -202,15 +198,11 @@ defined by the combination of the JSON Schema and JSON-LD schema that satisfies 
 </div>
 <div class="section" id="defining-the-json-ld-context">
 <h3>Defining the JSON-LD Context<a class="headerlink" href="#defining-the-json-ld-context" title="Permalink to this headline">¶</a></h3>
-<div class="admonition-todo admonition" id="id2">
-<p class="admonition-title">Todo</p>
-<p>Define the context, add soem text</p>
-</div>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
   <span class="nt">&quot;schema&quot;</span><span class="p">:</span> <span class="s2">&quot;http://schema.org/&quot;</span>
-  <span class="s2">&quot;openteams&quot;</span><span class="p">:</span> <span class="s2">&quot;http://api.openteams.com/json-ld/&quot;</span>
-  <span class="s2">&quot;@type&quot;</span><span class="p">:</span> <span class="s2">&quot;schema:Organization&quot;</span>
-  <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="p">{</span>
+  <span class="p">,</span> <span class="nt">&quot;openteams&quot;</span><span class="p">:</span> <span class="s2">&quot;http://api.openteams.com/json-ld/&quot;</span>
+  <span class="p">,</span> <span class="nt">&quot;@type&quot;</span><span class="p">:</span> <span class="s2">&quot;schema:Organization&quot;</span>
+  <span class="p">,</span> <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="p">{</span>
     <span class="nt">&quot;@id&quot;</span><span class="p">:</span> <span class="s2">&quot;schema:legalName&quot;</span>
   <span class="p">}</span>
   <span class="p">,</span> <span class="nt">&quot;display_name&quot;</span><span class="p">:</span> <span class="p">{</span>
@@ -231,7 +223,7 @@ defined by the combination of the JSON Schema and JSON-LD schema that satisfies 
 </div>
 <div class="section" id="configuring-the-partner-profile-resource-in-django">
 <h3>Configuring the Partner Profile resource in Django<a class="headerlink" href="#configuring-the-partner-profile-resource-in-django" title="Permalink to this headline">¶</a></h3>
-<div class="admonition-todo admonition" id="id3">
+<div class="admonition-todo admonition" id="id1">
 <p class="admonition-title">Todo</p>
 <p>Show how to configure in Django</p>
 </div>
@@ -250,16 +242,8 @@ defined by the combination of the JSON Schema and JSON-LD schema that satisfies 
 </div>
 <div class="section" id="using-the-partner-profile-rest-api">
 <h2>Using the Partner Profile REST API<a class="headerlink" href="#using-the-partner-profile-rest-api" title="Permalink to this headline">¶</a></h2>
-<div class="admonition-todo admonition" id="id4">
-<p class="admonition-title">Todo</p>
-<p>Show HTTP traces</p>
-</div>
 <div class="section" id="get-a-listing-of-the-existing-partner-profile-resources">
 <h3>Get a listing of the existing Partner Profile resources<a class="headerlink" href="#get-a-listing-of-the-existing-partner-profile-resources" title="Permalink to this headline">¶</a></h3>
-<div class="admonition-todo admonition" id="id5">
-<p class="admonition-title">Todo</p>
-<p>Add http traces</p>
-</div>
 <div class="section" id="request">
 <h4>Request<a class="headerlink" href="#request" title="Permalink to this headline">¶</a></h4>
 <div class="highlight-http notranslate"><div class="highlight"><pre><span></span><span class="nf">GET</span> <span class="nn">/partner-profiles</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
@@ -274,7 +258,10 @@ defined by the combination of the JSON Schema and JSON-LD schema that satisfies 
 <span class="na">Content-Type</span><span class="o">:</span> <span class="l">application/json</span>
 <span class="na">Date</span><span class="o">:</span> <span class="l">Wed, 22 Jul 2020 12:12:12 GMT</span>
 <span class="na">Last-Modified</span><span class="o">:</span> <span class="l">Tue, 21 Jul 2020 12:12:12 GMT</span>
-<span class="na">ETag</span><span class="o">:</span> <span class="l">XXXXX</span>
+<span class="na">ETag</span><span class="o">:</span> <span class="l">&quot;XXXXX&quot;</span>
+<span class="na">Link</span><span class="o">:</span> <span class="l">&lt;https://api.openteams.com/json-schema/PartnerProfile-Listing&gt;; rel=&quot;describedBy&quot;</span>
+<span class="na">Link</span><span class="o">:</span> <span class="l">&lt;https://api.openteams.com/json-ld/PartnerProfile-Listing&gt;;</span>
+      <span class="l">rel=&quot;http://www.w3.org/ns/json-ld#context&quot;; type=&quot;application/ld+json&quot;</span>
 
 <span class="p">{</span>
   <span class="nt">&quot;count&quot;</span><span class="p">:</span> <span class="mi">1</span>
@@ -302,21 +289,24 @@ defined by the combination of the JSON Schema and JSON-LD schema that satisfies 
 </div>
 <div class="section" id="get-the-options-for-the-partner-profile-listing-resource">
 <h3>Get the OPTIONS for the Partner Profile listing resource<a class="headerlink" href="#get-the-options-for-the-partner-profile-listing-resource" title="Permalink to this headline">¶</a></h3>
-<div class="section" id="id6">
-<h4>Request<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="id2">
+<h4>Request<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h4>
 <div class="highlight-http notranslate"><div class="highlight"><pre><span></span><span class="nf">OPTIONS</span> <span class="nn">/partner-profiles</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
 <span class="na">Host</span><span class="o">:</span> <span class="l">backend.openteams.com</span>
 <span class="na">Accept</span><span class="o">:</span> <span class="l">application/json</span>
 </pre></div>
 </div>
 </div>
-<div class="section" id="id7">
-<h4>Response<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="id3">
+<h4>Response<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h4>
 <div class="highlight-http notranslate"><div class="highlight"><pre><span></span><span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span> <span class="m">200</span> <span class="ne">OK</span>
 <span class="na">Content-Type</span><span class="o">:</span> <span class="l">application/json</span>
 <span class="na">Date</span><span class="o">:</span> <span class="l">Wed, 22 Jul 2020 12:12:12 GMT</span>
 <span class="na">Last-Modified</span><span class="o">:</span> <span class="l">Tue, 21 Jul 2020 12:12:12 GMT</span>
-<span class="na">ETag</span><span class="o">:</span> <span class="l">XXXXX</span>
+<span class="na">ETag</span><span class="o">:</span> <span class="l">&quot;XXXXX&quot;</span>
+<span class="na">Link</span><span class="o">:</span> <span class="l">&lt;http://scrud.io/schemas/semantic_http.json&gt;; rel=”describedby”</span>
+<span class="na">Link</span><span class="o">:</span> <span class="l">&lt;http://scrud.io/contexts/semantic_http.json&gt;;</span>
+      <span class="l">rel=&quot;http://www.w3.org/ns/json-ld#context&quot;; type=&quot;application/ld+json&quot;</span>
 
 <span class="p">{</span>
    <span class="nt">&quot;get&quot;</span><span class="p">:</span> <span class="p">{</span>
@@ -404,12 +394,8 @@ defined by the combination of the JSON Schema and JSON-LD schema that satisfies 
 </div>
 <div class="section" id="post-a-new-partner-profile-resource">
 <h3>POST a new Partner Profile resource<a class="headerlink" href="#post-a-new-partner-profile-resource" title="Permalink to this headline">¶</a></h3>
-<div class="admonition-todo admonition" id="id8">
-<p class="admonition-title">Todo</p>
-<p>Add http traces</p>
-</div>
-<div class="section" id="id9">
-<h4>Request<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="id4">
+<h4>Request<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h4>
 <div class="highlight-http notranslate"><div class="highlight"><pre><span></span><span class="nf">POST</span> <span class="nn">/partner-profiles</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
 <span class="na">Host</span><span class="o">:</span> <span class="l">backend.openteams.com</span>
 <span class="na">Content-Type</span><span class="o">:</span> <span class="l">application/json</span>
@@ -423,13 +409,13 @@ defined by the combination of the JSON Schema and JSON-LD schema that satisfies 
 </pre></div>
 </div>
 </div>
-<div class="section" id="id10">
-<h4>Response<a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="id5">
+<h4>Response<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h4>
 <div class="highlight-http notranslate"><div class="highlight"><pre><span></span><span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span> <span class="m">201</span> <span class="ne">Created</span>
 <span class="na">Content-Type</span><span class="o">:</span> <span class="l">application/json</span>
 <span class="na">Date</span><span class="o">:</span> <span class="l">Wed, 22 Jul 2020 12:12:12 GMT</span>
 <span class="na">Last-Modified</span><span class="o">:</span> <span class="l">Wed, 22 Jul 2020 12:12:12 GMT</span>
-<span class="na">ETag</span><span class="o">:</span> <span class="l">YYYYY</span>
+<span class="na">ETag</span><span class="o">:</span> <span class="l">&quot;YYYYY&quot;</span>
 <span class="na">Location</span><span class="o">:</span> <span class="l">https://backend.openteams.com/partner-profiles/safety-dancers</span>
 
 <span class="p">{</span>
@@ -445,24 +431,23 @@ defined by the combination of the JSON Schema and JSON-LD schema that satisfies 
 </div>
 <div class="section" id="get-the-resulting-partner-profile-resource">
 <h3>GET the resulting Partner Profile resource<a class="headerlink" href="#get-the-resulting-partner-profile-resource" title="Permalink to this headline">¶</a></h3>
-<div class="admonition-todo admonition" id="id11">
-<p class="admonition-title">Todo</p>
-<p>Add http traces</p>
-</div>
-<div class="section" id="id12">
-<h4>Request<a class="headerlink" href="#id12" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="id6">
+<h4>Request<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h4>
 <div class="highlight-http notranslate"><div class="highlight"><pre><span></span><span class="nf">GET</span> <span class="nn">/partner-profiles/safety-dancers</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
 <span class="na">Host</span><span class="o">:</span> <span class="l">backend.openteams.com</span>
 <span class="na">Accept</span><span class="o">:</span> <span class="l">application/json</span>
 </pre></div>
 </div>
 </div>
-<div class="section" id="id13">
-<h4>Response<a class="headerlink" href="#id13" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="id7">
+<h4>Response<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h4>
 <div class="highlight-http notranslate"><div class="highlight"><pre><span></span><span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span> <span class="m">200</span> <span class="ne">OK</span>
 <span class="na">Content-Type</span><span class="o">:</span> <span class="l">application/json</span>
 <span class="na">Date</span><span class="o">:</span> <span class="l">Wed, 22 Jul 2020 13:13:13 GMT</span>
 <span class="na">Last-Modified</span><span class="o">:</span> <span class="l">Wed, 22 Jul 2020 12:12:12 GMT</span>
+<span class="na">Link</span><span class="o">:</span> <span class="l">&lt;https://api.openteams.com/json-schema/PartnerProfile&gt;; rel=&quot;describedBy&quot;</span>
+<span class="na">Link</span><span class="o">:</span> <span class="l">&lt;https://api.openteams.com/json-ld/PartnerProfile&gt;;</span>
+      <span class="l">rel=&quot;http://www.w3.org/ns/json-ld#context&quot;; type=&quot;application/ld+json&quot;</span>
 
 <span class="p">{</span>
   <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;Safety Dancers, Inc.&quot;</span>
@@ -477,25 +462,24 @@ defined by the combination of the JSON Schema and JSON-LD schema that satisfies 
 </div>
 <div class="section" id="get-the-listing-of-partner-profile-resources-and-see-the-new-resource">
 <h3>GET the listing of Partner Profile resources and see the new resource<a class="headerlink" href="#get-the-listing-of-partner-profile-resources-and-see-the-new-resource" title="Permalink to this headline">¶</a></h3>
-<div class="admonition-todo admonition" id="id14">
-<p class="admonition-title">Todo</p>
-<p>Add http traces</p>
-</div>
-<div class="section" id="id15">
-<h4>Request<a class="headerlink" href="#id15" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="id8">
+<h4>Request<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h4>
 <div class="highlight-http notranslate"><div class="highlight"><pre><span></span><span class="nf">GET</span> <span class="nn">/partner-profiles</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
 <span class="na">Host</span><span class="o">:</span> <span class="l">backend.openteams.com</span>
 <span class="na">Accept</span><span class="o">:</span> <span class="l">application/json</span>
 </pre></div>
 </div>
 </div>
-<div class="section" id="id16">
-<h4>Response<a class="headerlink" href="#id16" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="id9">
+<h4>Response<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h4>
 <div class="highlight-http notranslate"><div class="highlight"><pre><span></span><span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span> <span class="m">200</span> <span class="ne">OK</span>
 <span class="na">Content-Type</span><span class="o">:</span> <span class="l">application/json</span>
 <span class="na">Date</span><span class="o">:</span> <span class="l">Wed, 22 Jul 2020 12:12:12 GMT</span>
 <span class="na">Last-Modified</span><span class="o">:</span> <span class="l">Tue, 21 Jul 2020 12:12:12 GMT</span>
-<span class="na">ETag</span><span class="o">:</span> <span class="l">XXXXX</span>
+<span class="na">ETag</span><span class="o">:</span> <span class="l">&quot;XXXXX&quot;</span>
+<span class="na">Link</span><span class="o">:</span> <span class="l">&lt;https://api.openteams.com/json-schema/PartnerProfile-Listing&gt;; rel=&quot;describedBy&quot;</span>
+<span class="na">Link</span><span class="o">:</span> <span class="l">&lt;https://api.openteams.com/json-ld/PartnerProfile-Listing&gt;;</span>
+      <span class="l">rel=&quot;http://www.w3.org/ns/json-ld#context&quot;; type=&quot;application/ld+json&quot;</span>
 
 <span class="p">{</span>
   <span class="nt">&quot;count&quot;</span><span class="p">:</span> <span class="mi">2</span>
@@ -535,25 +519,24 @@ defined by the combination of the JSON Schema and JSON-LD schema that satisfies 
 </div>
 <div class="section" id="get-the-options-for-the-partner-profile-resource">
 <h3>Get the OPTIONS for the Partner Profile resource<a class="headerlink" href="#get-the-options-for-the-partner-profile-resource" title="Permalink to this headline">¶</a></h3>
-<div class="admonition-todo admonition" id="id17">
-<p class="admonition-title">Todo</p>
-<p>Add http traces</p>
-</div>
-<div class="section" id="id18">
-<h4>Request<a class="headerlink" href="#id18" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="id10">
+<h4>Request<a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h4>
 <div class="highlight-http notranslate"><div class="highlight"><pre><span></span><span class="nf">OPTIONS</span> <span class="nn">/partner-profiles/safety-dancers</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
 <span class="na">Host</span><span class="o">:</span> <span class="l">backend.openteams.com</span>
 <span class="na">Accept</span><span class="o">:</span> <span class="l">application/json</span>
 </pre></div>
 </div>
 </div>
-<div class="section" id="id19">
-<h4>Response<a class="headerlink" href="#id19" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="id11">
+<h4>Response<a class="headerlink" href="#id11" title="Permalink to this headline">¶</a></h4>
 <div class="highlight-http notranslate"><div class="highlight"><pre><span></span><span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span> <span class="m">200</span> <span class="ne">OK</span>
 <span class="na">Content-Type</span><span class="o">:</span> <span class="l">application/json</span>
 <span class="na">Date</span><span class="o">:</span> <span class="l">Wed, 22 Jul 2020 13:13:13 GMT</span>
 <span class="na">Last-Modified</span><span class="o">:</span> <span class="l">Tue, 21 Jul 2020 12:12:12 GMT</span>
-<span class="na">ETag</span><span class="o">:</span> <span class="l">XXXXX</span>
+<span class="na">ETag</span><span class="o">:</span> <span class="l">&quot;XXXXX&quot;</span>
+<span class="na">Link</span><span class="o">:</span> <span class="l">&lt;http://scrud.io/schemas/semantic_http.json&gt;; rel=”describedby”</span>
+<span class="na">Link</span><span class="o">:</span> <span class="l">&lt;http://scrud.io/contexts/semantic_http.json&gt;;</span>
+      <span class="l">rel=&quot;http://www.w3.org/ns/json-ld#context&quot;; type=&quot;application/ld+json&quot;</span>
 
 <span class="p">{</span>
    <span class="nt">&quot;get&quot;</span><span class="p">:</span> <span class="p">{</span>
@@ -639,14 +622,14 @@ defined by the combination of the JSON Schema and JSON-LD schema that satisfies 
 </div>
 <div class="section" id="put-an-update-to-the-partner-profile-resource">
 <h3>PUT an update to the Partner Profile resource<a class="headerlink" href="#put-an-update-to-the-partner-profile-resource" title="Permalink to this headline">¶</a></h3>
-<div class="admonition-todo admonition" id="id20">
+<div class="admonition-todo admonition" id="id12">
 <p class="admonition-title">Todo</p>
 <p>Add http traces</p>
 </div>
 </div>
 <div class="section" id="delete-the-partner-profile-resource">
 <h3>DELETE the Partner Profile resource<a class="headerlink" href="#delete-the-partner-profile-resource" title="Permalink to this headline">¶</a></h3>
-<div class="admonition-todo admonition" id="id21">
+<div class="admonition-todo admonition" id="id13">
 <p class="admonition-title">Todo</p>
 <p>Add http traces</p>
 </div>
@@ -654,34 +637,34 @@ defined by the combination of the JSON Schema and JSON-LD schema that satisfies 
 </div>
 <div class="section" id="the-default-partner-profile-ui-in-scrud-vue">
 <h2>The default Partner Profile UI in <code class="docutils literal notranslate"><span class="pre">scrud-vue</span></code><a class="headerlink" href="#the-default-partner-profile-ui-in-scrud-vue" title="Permalink to this headline">¶</a></h2>
-<div class="admonition-todo admonition" id="id22">
+<div class="admonition-todo admonition" id="id14">
 <p class="admonition-title">Todo</p>
 <p>Mock up some screens, for now</p>
 </div>
 <div class="section" id="get-a-listing-of-partner-profile-resources">
 <h3>Get a listing of Partner Profile resources<a class="headerlink" href="#get-a-listing-of-partner-profile-resources" title="Permalink to this headline">¶</a></h3>
-<div class="admonition-todo admonition" id="id23">
+<div class="admonition-todo admonition" id="id15">
 <p class="admonition-title">Todo</p>
 <p>Mock up some screens, for now</p>
 </div>
 </div>
 <div class="section" id="view-an-individual-partner-profile-resource">
 <h3>View an individual Partner Profile resource<a class="headerlink" href="#view-an-individual-partner-profile-resource" title="Permalink to this headline">¶</a></h3>
-<div class="admonition-todo admonition" id="id24">
+<div class="admonition-todo admonition" id="id16">
 <p class="admonition-title">Todo</p>
 <p>Mock up some screens, for now</p>
 </div>
 </div>
 <div class="section" id="edit-an-individual-partner-profile-resource">
 <h3>Edit an individual Partner Profile resource<a class="headerlink" href="#edit-an-individual-partner-profile-resource" title="Permalink to this headline">¶</a></h3>
-<div class="admonition-todo admonition" id="id25">
+<div class="admonition-todo admonition" id="id17">
 <p class="admonition-title">Todo</p>
 <p>Mock up some screens, for now</p>
 </div>
 </div>
 <div class="section" id="create-a-new-partner-profile-resource">
 <h3>Create a new Partner Profile resource<a class="headerlink" href="#create-a-new-partner-profile-resource" title="Permalink to this headline">¶</a></h3>
-<div class="admonition-todo admonition" id="id26">
+<div class="admonition-todo admonition" id="id18">
 <p class="admonition-title">Todo</p>
 <p>Mock up some screens, for now</p>
 </div>
@@ -689,47 +672,47 @@ defined by the combination of the JSON Schema and JSON-LD schema that satisfies 
 </div>
 <div class="section" id="customizing-the-rendering-of-the-tbd-property">
 <h2>Customizing the rendering of the <em>tbd</em> property<a class="headerlink" href="#customizing-the-rendering-of-the-tbd-property" title="Permalink to this headline">¶</a></h2>
-<div class="admonition-todo admonition" id="id27">
+<div class="admonition-todo admonition" id="id19">
 <p class="admonition-title">Todo</p>
 <p>Pick a property, register a new vue component for its RDF type.</p>
 </div>
 <div class="section" id="defining-the-new-vue-component">
 <h3>Defining the new Vue component<a class="headerlink" href="#defining-the-new-vue-component" title="Permalink to this headline">¶</a></h3>
-<div class="admonition-todo admonition" id="id28">
+<div class="admonition-todo admonition" id="id20">
 <p class="admonition-title">Todo</p>
 <p>Show the definition of a new Vue component.</p>
 </div>
 </div>
 <div class="section" id="registering-the-new-vue-component">
 <h3>Registering the new Vue component<a class="headerlink" href="#registering-the-new-vue-component" title="Permalink to this headline">¶</a></h3>
-<div class="admonition-todo admonition" id="id29">
+<div class="admonition-todo admonition" id="id21">
 <p class="admonition-title">Todo</p>
 <p>Show registering the component in the configuration map.</p>
 </div>
 </div>
 <div class="section" id="the-new-ui-after-customization">
 <h3>The new UI after customization<a class="headerlink" href="#the-new-ui-after-customization" title="Permalink to this headline">¶</a></h3>
-<div class="admonition-todo admonition" id="id30">
+<div class="admonition-todo admonition" id="id22">
 <p class="admonition-title">Todo</p>
 <p>Mock up some screenshots, for now.</p>
 </div>
-<div class="section" id="id31">
-<h4>View an individual Partner Profile resource<a class="headerlink" href="#id31" title="Permalink to this headline">¶</a></h4>
-<div class="admonition-todo admonition" id="id32">
+<div class="section" id="id23">
+<h4>View an individual Partner Profile resource<a class="headerlink" href="#id23" title="Permalink to this headline">¶</a></h4>
+<div class="admonition-todo admonition" id="id24">
 <p class="admonition-title">Todo</p>
 <p>Mock up some screens, for now</p>
 </div>
 </div>
-<div class="section" id="id33">
-<h4>Edit an individual Partner Profile resource<a class="headerlink" href="#id33" title="Permalink to this headline">¶</a></h4>
-<div class="admonition-todo admonition" id="id34">
+<div class="section" id="id25">
+<h4>Edit an individual Partner Profile resource<a class="headerlink" href="#id25" title="Permalink to this headline">¶</a></h4>
+<div class="admonition-todo admonition" id="id26">
 <p class="admonition-title">Todo</p>
 <p>Mock up some screens, for now</p>
 </div>
 </div>
-<div class="section" id="id35">
-<h4>Create a new Partner Profile resource<a class="headerlink" href="#id35" title="Permalink to this headline">¶</a></h4>
-<div class="admonition-todo admonition" id="id36">
+<div class="section" id="id27">
+<h4>Create a new Partner Profile resource<a class="headerlink" href="#id27" title="Permalink to this headline">¶</a></h4>
+<div class="admonition-todo admonition" id="id28">
 <p class="admonition-title">Todo</p>
 <p>Mock up some screens, for now</p>
 </div>
