@@ -14,7 +14,7 @@ be rendered by default and customize the rendering of one of the fields.
   "name": "Semantics and CRUD, LLC"
   , "display_name": "Semantics and CRUD"
   , "slug": "semantics-crud"
-  , "logo": "http://openteams.com/partners/semantics-crud/media/logo.png"
+  , "logo": "http://backend.openteams.com/partners/semantics-crud/media/logo.png"
   , "id": "some-uuid"
 }
 ```
@@ -127,10 +127,144 @@ Show HTTP traces
 Add http traces
 ```
 
-### Get the OPTIONS for the Partner Profile listing
+#### Request
 
-```{todo}
-Add http traces
+```http
+GET /partner-profiles HTTP/1.1
+Host: backend.openteams.com
+Accept: application/json
+```
+
+#### Response
+
+```http
+HTTP/1.1 200 OK
+Content-Type: application/json
+Date: Wed, 22 Jul 2020 12:12:12 GMT
+Last-Modified: Tue, 21 Jul 2020 12:12:12 GMT
+ETag: XXXXX
+
+{
+  "count": 1
+  , "page_count": 1
+  , "previous": null
+  , "next": null
+  , "content": [
+    {
+      "url": "/partner-profiles/semantics-crud"
+      , "last_modified": "Tue, 21 Jul 2020 12:12:12 GMT"
+      , "etag": "XXXXX"
+      , "content": {
+        "name": "Semantics and CRUD, LLC"
+        , "display_name": "Semantics and CRUD"
+        , "slug": "semantics-crud"
+        , "logo": "http://backend.openteams.com/partners/semantics-crud/media/logo.png"
+        , "id": "some-uuid"
+      }
+    }
+  ]
+}
+```
+
+### Get the OPTIONS for the Partner Profile listing resource
+
+#### Request
+
+```http
+OPTIONS /partner-profiles HTTP/1.1
+Host: backend.openteams.com
+Accept: application/json
+```
+
+#### Response
+
+```http
+HTTP/1.1 200 OK
+Content-Type: application/json
+Date: Wed, 22 Jul 2020 12:12:12 GMT
+Last-Modified: Tue, 21 Jul 2020 12:12:12 GMT
+ETag: XXXXX
+
+{
+   "get": {
+      "responses": {
+         "200": {
+             "description": "OK"
+             , "content": {
+                 "application/json": {
+                     "context":
+                     "https://api.openteams.com/json-ld/PartnerProfile-Listing"
+                     , "schema":
+                     "https://api.openteams.com/json-schema/PartnerProfile-Listing"
+                 }
+             }
+         }
+      }
+   }
+   , "post": {
+      "requestBody": {
+         "description": "Create a new resource in this collection."
+         , "required": true
+         , "content": {
+             "application/json": {
+                 "context": "https://api.openteams.com/json-ld/PartnerProfile"
+                 , "schema": "https://api.openteams.com/json-schema/PartnerProfile"
+             }
+         }
+      }
+      , "responses": {
+         "201": {
+            "description": "OK"
+         }
+         , "400": {
+             "description": "BAD REQUEST: The request was malformed or
+                             missing required content."
+             , "content": {
+                 "application/json": {
+                     "context": "https://api.openteams.com/json-ld/ErrorResponse"
+                     , "schema": "https://api.openteams.com/json-schema/ErrorResponse"
+                 }
+             }
+         }
+         , "401": {
+             "description": "UNAUTHORIZED: The request requires
+                             authentication."
+         }
+         , "403": {
+             "description": "FORBIDDEN: The requires requires
+                             permissions the current authenticated
+                             request does not have."
+         }
+      }
+   }
+   , "delete": {
+      "responses": {
+         "200": {
+             "description": "OK"
+         }
+         , "400": {
+             "description": "BAD REQUEST: The request was malformed or
+                             missing required content."
+             , "content": {
+                 "application/json": {
+                     "context": "https://api.openteams.com/json-ld/ErrorResponse"
+                     , "schema": "https://api.openteams.com/json-schema/ErrorResponse"
+                 }
+             }
+         }
+         , "401": {
+             "description": "UNAUTHORIZED: The request requires
+                             authentication."
+         }
+         , "403": {
+             "description": "FORBIDDEN: The requires requires permissions
+                             the current authenticated request does not
+                             have."
+         }
+
+      }
+   }
+}
 ```
 
 ### POST a new Partner Profile resource
@@ -139,10 +273,69 @@ Add http traces
 Add http traces
 ```
 
+#### Request
+
+```http
+POST /partner-profiles HTTP/1.1
+Host: backend.openteams.com
+Content-Type: application/json
+
+{
+  "name": "Safety Dancers, Inc."
+  , "display_name": "Safety Dancers"
+  , "slug": "safety-dancers"
+  , "logo": null
+}
+```
+
+#### Response
+
+```http
+HTTP/1.1 201 Created
+Content-Type: application/json
+Date: Wed, 22 Jul 2020 12:12:12 GMT
+Last-Modified: Wed, 22 Jul 2020 12:12:12 GMT
+ETag: YYYYY
+Location: https://backend.openteams.com/partner-profiles/safety-dancers
+
+{
+  "name": "Safety Dancers, Inc."
+  , "display_name": "Safety Dancers"
+  , "slug": "safety-dancers"
+  , "logo": null
+  , "id": "some-other-uuid"
+}
+```
+
 ### GET the resulting Partner Profile resource
 
 ```{todo}
 Add http traces
+```
+
+#### Request
+
+```http
+GET /partner-profiles/safety-dancers HTTP/1.1
+Host: backend.openteams.com
+Accept: application/json
+```
+
+#### Response
+
+```http
+HTTP/1.1 200 OK
+Content-Type: application/json
+Date: Wed, 22 Jul 2020 13:13:13 GMT
+Last-Modified: Wed, 22 Jul 2020 12:12:12 GMT
+
+{
+  "name": "Safety Dancers, Inc."
+  , "display_name": "Safety Dancers"
+  , "slug": "safety-dancers"
+  , "logo": null
+  , "id": "some-other-uuid"
+}
 ```
 
 ### GET the listing of Partner Profile resources and see the new resource
@@ -151,10 +344,159 @@ Add http traces
 Add http traces
 ```
 
+#### Request
+
+```http
+GET /partner-profiles HTTP/1.1
+Host: backend.openteams.com
+Accept: application/json
+```
+
+#### Response
+
+```http
+HTTP/1.1 200 OK
+Content-Type: application/json
+Date: Wed, 22 Jul 2020 12:12:12 GMT
+Last-Modified: Tue, 21 Jul 2020 12:12:12 GMT
+ETag: XXXXX
+
+{
+  "count": 2
+  , "page_count": 1
+  , "previous": null
+  , "next": null
+  , "content": [
+    {
+      "url": "/partner-profiles/semantics-crud"
+      , "last_modified": "Tue, 21 Jul 2020 12:12:12 GMT"
+      , "etag": "XXXXX"
+      , "content": {
+        "name": "Semantics and CRUD, LLC"
+        , "display_name": "Semantics and CRUD"
+        , "slug": "semantics-crud"
+        , "logo": "http://backend.openteams.com/partners/semantics-crud/media/logo.png"
+        , "id": "some-uuid"
+      }
+    }
+    , {
+      "url": "/partner-profiles/safety-dancers"
+      , "last_modified": "Wed, 22 Jul 2020 12:12:12 GMT"
+      , "etag": "YYYYY"
+      , "content": {
+        "name": "Safety Dancers, Inc."
+        , "display_name": "Safety Dancers"
+        , "slug": "safety-dancers"
+        , "logo": null
+        , "id": "some-other-uuid"
+      }
+    }
+  ]
+}
+```
+
+
 ### Get the OPTIONS for the Partner Profile resource
 
 ```{todo}
 Add http traces
+```
+
+#### Request
+
+```http
+OPTIONS /partner-profiles/safety-dancers HTTP/1.1
+Host: backend.openteams.com
+Accept: application/json
+```
+
+#### Response
+
+```http
+HTTP/1.1 200 OK
+Content-Type: application/json
+Date: Wed, 22 Jul 2020 13:13:13 GMT
+Last-Modified: Tue, 21 Jul 2020 12:12:12 GMT
+ETag: XXXXX
+
+{
+   "get": {
+      "responses": {
+         "200": {
+             "description": "OK"
+             , "content": {
+                 "application/json": {
+                     "context": "https://api.openteams.com/json-ld/PartnerProfile"
+                     , "schema": "https://api.openteams.com/json-schema/PartnerProfile"
+                 }
+             }
+         }
+      }
+   }
+   , "put": {
+      "requestBody": {
+         "description": "The updated content for the resource."
+         , "required": true
+         , "content": {
+             "application/json": {
+                 "context": "https://api.openteams.com/json-ld/PartnerProfile"
+                 , "schema": "https://api.openteams.com/json-schema/PartnerProfile"
+             }
+         }
+      }
+      , "responses": {
+         "200": {
+            "description": "OK"
+         }
+         , "400": {
+             "description": "BAD REQUEST: The request was malformed or
+                             missing required content."
+             , "content": {
+                 "application/json": {
+                     "context": "https://api.openteams.com/json-ld/ErrorResponse"
+                     , "schema": "https://api.openteams.com/json-schema/ErrorResponse"
+                 }
+             }
+         }
+         , "401": {
+             "description": "UNAUTHORIZED: The request requires
+                             authentication."
+         }
+         , "403": {
+             "description": "FORBIDDEN: The requires requires
+                             permissions the current authenticated
+                             request does not have."
+         }
+      }
+   }
+   , "delete": {
+      "responses": {
+         "200": {
+             "description": "OK"
+         }
+         , "400": {
+             "description": "BAD REQUEST: The request was malformed or
+                             missing required content."
+             , "content": {
+                 "application/json": {
+                     "context": "https://api.openteams.com/json-ld/ErrorResponse"
+                     , "schema": "https://api.openteams.com/json-schema/ErrorResponse"
+                 }
+             }
+         }
+         , "401": {
+             "description": "UNAUTHORIZED: The request requires
+                             authentication."
+         }
+         , "403": {
+             "description": "FORBIDDEN: The requires requires permissions
+                             the current authenticated request does not
+                             have."
+         }
+
+      }
+   }
+}
 ```
 
 ### PUT an update to the Partner Profile resource
