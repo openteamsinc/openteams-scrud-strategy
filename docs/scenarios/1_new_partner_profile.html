@@ -76,8 +76,16 @@
 <li><a class="reference internal" href="#id11">Response</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#put-an-update-to-the-partner-profile-resource">PUT an update to the Partner Profile resource</a></li>
-<li><a class="reference internal" href="#delete-the-partner-profile-resource">DELETE the Partner Profile resource</a></li>
+<li><a class="reference internal" href="#put-an-update-to-the-partner-profile-resource">PUT an update to the Partner Profile resource</a><ul>
+<li><a class="reference internal" href="#id12">Request</a></li>
+<li><a class="reference internal" href="#id13">Response</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#delete-the-partner-profile-resource">DELETE the Partner Profile resource</a><ul>
+<li><a class="reference internal" href="#id14">Request</a></li>
+<li><a class="reference internal" href="#id15">Response</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li><a class="reference internal" href="#the-default-partner-profile-ui-in-scrud-vue">The default Partner Profile UI in <code class="docutils literal notranslate"><span class="pre">scrud-vue</span></code></a><ul>
@@ -91,9 +99,9 @@
 <li><a class="reference internal" href="#defining-the-new-vue-component">Defining the new Vue component</a></li>
 <li><a class="reference internal" href="#registering-the-new-vue-component">Registering the new Vue component</a></li>
 <li><a class="reference internal" href="#the-new-ui-after-customization">The new UI after customization</a><ul>
-<li><a class="reference internal" href="#id23">View an individual Partner Profile resource</a></li>
-<li><a class="reference internal" href="#id25">Edit an individual Partner Profile resource</a></li>
-<li><a class="reference internal" href="#id27">Create a new Partner Profile resource</a></li>
+<li><a class="reference internal" href="#id25">View an individual Partner Profile resource</a></li>
+<li><a class="reference internal" href="#id27">Edit an individual Partner Profile resource</a></li>
+<li><a class="reference internal" href="#id29">Create a new Partner Profile resource</a></li>
 </ul>
 </li>
 </ul>
@@ -258,7 +266,7 @@ defined by the combination of the JSON Schema and JSON-LD schema that satisfies 
 <span class="na">Content-Type</span><span class="o">:</span> <span class="l">application/json</span>
 <span class="na">Date</span><span class="o">:</span> <span class="l">Wed, 22 Jul 2020 12:12:12 GMT</span>
 <span class="na">Last-Modified</span><span class="o">:</span> <span class="l">Tue, 21 Jul 2020 12:12:12 GMT</span>
-<span class="na">ETag</span><span class="o">:</span> <span class="l">&quot;XXXXX&quot;</span>
+<span class="na">ETag</span><span class="o">:</span> <span class="l">&quot;11111&quot;</span>
 <span class="na">Link</span><span class="o">:</span> <span class="l">&lt;https://api.openteams.com/json-schema/PartnerProfile-Listing&gt;; rel=&quot;describedBy&quot;</span>
 <span class="na">Link</span><span class="o">:</span> <span class="l">&lt;https://api.openteams.com/json-ld/PartnerProfile-Listing&gt;;</span>
       <span class="l">rel=&quot;http://www.w3.org/ns/json-ld#context&quot;; type=&quot;application/ld+json&quot;</span>
@@ -272,7 +280,7 @@ defined by the combination of the JSON Schema and JSON-LD schema that satisfies 
     <span class="p">{</span>
       <span class="nt">&quot;url&quot;</span><span class="p">:</span> <span class="s2">&quot;/partner-profiles/semantics-crud&quot;</span>
       <span class="p">,</span> <span class="nt">&quot;last_modified&quot;</span><span class="p">:</span> <span class="s2">&quot;Tue, 21 Jul 2020 12:12:12 GMT&quot;</span>
-      <span class="p">,</span> <span class="nt">&quot;etag&quot;</span><span class="p">:</span> <span class="s2">&quot;XXXXX&quot;</span>
+      <span class="p">,</span> <span class="nt">&quot;etag&quot;</span><span class="p">:</span> <span class="s2">&quot;00000&quot;</span>
       <span class="p">,</span> <span class="nt">&quot;content&quot;</span><span class="p">:</span> <span class="p">{</span>
         <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;Semantics and CRUD, LLC&quot;</span>
         <span class="p">,</span> <span class="nt">&quot;display_name&quot;</span><span class="p">:</span> <span class="s2">&quot;Semantics and CRUD&quot;</span>
@@ -303,7 +311,7 @@ defined by the combination of the JSON Schema and JSON-LD schema that satisfies 
 <span class="na">Content-Type</span><span class="o">:</span> <span class="l">application/json</span>
 <span class="na">Date</span><span class="o">:</span> <span class="l">Wed, 22 Jul 2020 12:12:12 GMT</span>
 <span class="na">Last-Modified</span><span class="o">:</span> <span class="l">Tue, 21 Jul 2020 12:12:12 GMT</span>
-<span class="na">ETag</span><span class="o">:</span> <span class="l">&quot;XXXXX&quot;</span>
+<span class="na">ETag</span><span class="o">:</span> <span class="l">&quot;22222&quot;</span>
 <span class="na">Link</span><span class="o">:</span> <span class="l">&lt;http://scrud.io/schemas/semantic_http.json&gt;; rel=”describedby”</span>
 <span class="na">Link</span><span class="o">:</span> <span class="l">&lt;http://scrud.io/contexts/semantic_http.json&gt;;</span>
       <span class="l">rel=&quot;http://www.w3.org/ns/json-ld#context&quot;; type=&quot;application/ld+json&quot;</span>
@@ -415,7 +423,7 @@ defined by the combination of the JSON Schema and JSON-LD schema that satisfies 
 <span class="na">Content-Type</span><span class="o">:</span> <span class="l">application/json</span>
 <span class="na">Date</span><span class="o">:</span> <span class="l">Wed, 22 Jul 2020 12:12:12 GMT</span>
 <span class="na">Last-Modified</span><span class="o">:</span> <span class="l">Wed, 22 Jul 2020 12:12:12 GMT</span>
-<span class="na">ETag</span><span class="o">:</span> <span class="l">&quot;YYYYY&quot;</span>
+<span class="na">ETag</span><span class="o">:</span> <span class="l">&quot;33333&quot;</span>
 <span class="na">Location</span><span class="o">:</span> <span class="l">https://backend.openteams.com/partner-profiles/safety-dancers</span>
 
 <span class="p">{</span>
@@ -445,6 +453,7 @@ defined by the combination of the JSON Schema and JSON-LD schema that satisfies 
 <span class="na">Content-Type</span><span class="o">:</span> <span class="l">application/json</span>
 <span class="na">Date</span><span class="o">:</span> <span class="l">Wed, 22 Jul 2020 13:13:13 GMT</span>
 <span class="na">Last-Modified</span><span class="o">:</span> <span class="l">Wed, 22 Jul 2020 12:12:12 GMT</span>
+<span class="na">ETag</span><span class="o">:</span> <span class="l">&quot;33333&quot;</span>
 <span class="na">Link</span><span class="o">:</span> <span class="l">&lt;https://api.openteams.com/json-schema/PartnerProfile&gt;; rel=&quot;describedBy&quot;</span>
 <span class="na">Link</span><span class="o">:</span> <span class="l">&lt;https://api.openteams.com/json-ld/PartnerProfile&gt;;</span>
       <span class="l">rel=&quot;http://www.w3.org/ns/json-ld#context&quot;; type=&quot;application/ld+json&quot;</span>
@@ -476,7 +485,7 @@ defined by the combination of the JSON Schema and JSON-LD schema that satisfies 
 <span class="na">Content-Type</span><span class="o">:</span> <span class="l">application/json</span>
 <span class="na">Date</span><span class="o">:</span> <span class="l">Wed, 22 Jul 2020 12:12:12 GMT</span>
 <span class="na">Last-Modified</span><span class="o">:</span> <span class="l">Tue, 21 Jul 2020 12:12:12 GMT</span>
-<span class="na">ETag</span><span class="o">:</span> <span class="l">&quot;XXXXX&quot;</span>
+<span class="na">ETag</span><span class="o">:</span> <span class="l">&quot;44444&quot;</span>
 <span class="na">Link</span><span class="o">:</span> <span class="l">&lt;https://api.openteams.com/json-schema/PartnerProfile-Listing&gt;; rel=&quot;describedBy&quot;</span>
 <span class="na">Link</span><span class="o">:</span> <span class="l">&lt;https://api.openteams.com/json-ld/PartnerProfile-Listing&gt;;</span>
       <span class="l">rel=&quot;http://www.w3.org/ns/json-ld#context&quot;; type=&quot;application/ld+json&quot;</span>
@@ -490,7 +499,7 @@ defined by the combination of the JSON Schema and JSON-LD schema that satisfies 
     <span class="p">{</span>
       <span class="nt">&quot;url&quot;</span><span class="p">:</span> <span class="s2">&quot;/partner-profiles/semantics-crud&quot;</span>
       <span class="p">,</span> <span class="nt">&quot;last_modified&quot;</span><span class="p">:</span> <span class="s2">&quot;Tue, 21 Jul 2020 12:12:12 GMT&quot;</span>
-      <span class="p">,</span> <span class="nt">&quot;etag&quot;</span><span class="p">:</span> <span class="s2">&quot;XXXXX&quot;</span>
+      <span class="p">,</span> <span class="nt">&quot;etag&quot;</span><span class="p">:</span> <span class="s2">&quot;00000&quot;</span>
       <span class="p">,</span> <span class="nt">&quot;content&quot;</span><span class="p">:</span> <span class="p">{</span>
         <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;Semantics and CRUD, LLC&quot;</span>
         <span class="p">,</span> <span class="nt">&quot;display_name&quot;</span><span class="p">:</span> <span class="s2">&quot;Semantics and CRUD&quot;</span>
@@ -502,7 +511,7 @@ defined by the combination of the JSON Schema and JSON-LD schema that satisfies 
     <span class="p">,</span> <span class="p">{</span>
       <span class="nt">&quot;url&quot;</span><span class="p">:</span> <span class="s2">&quot;/partner-profiles/safety-dancers&quot;</span>
       <span class="p">,</span> <span class="nt">&quot;last_modified&quot;</span><span class="p">:</span> <span class="s2">&quot;Wed, 22 Jul 2020 12:12:12 GMT&quot;</span>
-      <span class="p">,</span> <span class="nt">&quot;etag&quot;</span><span class="p">:</span> <span class="s2">&quot;YYYYY&quot;</span>
+      <span class="p">,</span> <span class="nt">&quot;etag&quot;</span><span class="p">:</span> <span class="s2">&quot;33333&quot;</span>
       <span class="p">,</span> <span class="nt">&quot;content&quot;</span><span class="p">:</span> <span class="p">{</span>
         <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;Safety Dancers, Inc.&quot;</span>
         <span class="p">,</span> <span class="nt">&quot;display_name&quot;</span><span class="p">:</span> <span class="s2">&quot;Safety Dancers&quot;</span>
@@ -533,7 +542,7 @@ defined by the combination of the JSON Schema and JSON-LD schema that satisfies 
 <span class="na">Content-Type</span><span class="o">:</span> <span class="l">application/json</span>
 <span class="na">Date</span><span class="o">:</span> <span class="l">Wed, 22 Jul 2020 13:13:13 GMT</span>
 <span class="na">Last-Modified</span><span class="o">:</span> <span class="l">Tue, 21 Jul 2020 12:12:12 GMT</span>
-<span class="na">ETag</span><span class="o">:</span> <span class="l">&quot;XXXXX&quot;</span>
+<span class="na">ETag</span><span class="o">:</span> <span class="l">&quot;55555&quot;</span>
 <span class="na">Link</span><span class="o">:</span> <span class="l">&lt;http://scrud.io/schemas/semantic_http.json&gt;; rel=”describedby”</span>
 <span class="na">Link</span><span class="o">:</span> <span class="l">&lt;http://scrud.io/contexts/semantic_http.json&gt;;</span>
       <span class="l">rel=&quot;http://www.w3.org/ns/json-ld#context&quot;; type=&quot;application/ld+json&quot;</span>
@@ -622,49 +631,86 @@ defined by the combination of the JSON Schema and JSON-LD schema that satisfies 
 </div>
 <div class="section" id="put-an-update-to-the-partner-profile-resource">
 <h3>PUT an update to the Partner Profile resource<a class="headerlink" href="#put-an-update-to-the-partner-profile-resource" title="Permalink to this headline">¶</a></h3>
-<div class="admonition-todo admonition" id="id12">
-<p class="admonition-title">Todo</p>
-<p>Add http traces</p>
+<div class="section" id="id12">
+<h4>Request<a class="headerlink" href="#id12" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-http notranslate"><div class="highlight"><pre><span></span><span class="nf">PUT</span> <span class="nn">/partner-profiles</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<span class="na">Host</span><span class="o">:</span> <span class="l">backend.openteams.com</span>
+<span class="na">Content-Type</span><span class="o">:</span> <span class="l">application/json</span>
+<span class="na">If-Match</span><span class="o">:</span> <span class="l">&quot;33333&quot;</span>
+<span class="na">If-Unmodified-Since</span><span class="o">:</span> <span class="l">Wed, 22 Jul 2020 12:12:12 GMT</span>
+
+<span class="p">{</span>
+  <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;Safety Dancers, Inc.&quot;</span>
+  <span class="p">,</span> <span class="nt">&quot;display_name&quot;</span><span class="p">:</span> <span class="s2">&quot;Safety Dancers&quot;</span>
+  <span class="p">,</span> <span class="nt">&quot;slug&quot;</span><span class="p">:</span> <span class="s2">&quot;safety-dancers&quot;</span>
+  <span class="p">,</span> <span class="nt">&quot;logo&quot;</span><span class="p">:</span> <span class="s2">&quot;http://backend.openteams.com/partners/safety-dancers/media/logo.png&quot;</span>
+  <span class="p">,</span> <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;some-other-uuid&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id13">
+<h4>Response<a class="headerlink" href="#id13" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-http notranslate"><div class="highlight"><pre><span></span><span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span> <span class="m">200</span> <span class="ne">OK</span>
+<span class="na">Content-Type</span><span class="o">:</span> <span class="l">application/json</span>
+<span class="na">Date</span><span class="o">:</span> <span class="l">Wed, 22 Jul 2020 13:13:13 GMT</span>
+<span class="na">Last-Modified</span><span class="o">:</span> <span class="l">Wed, 22 Jul 2020 13:13:13 GMT</span>
+<span class="na">ETag</span><span class="o">:</span> <span class="l">&quot;66666&quot;</span>
+</pre></div>
+</div>
 </div>
 </div>
 <div class="section" id="delete-the-partner-profile-resource">
 <h3>DELETE the Partner Profile resource<a class="headerlink" href="#delete-the-partner-profile-resource" title="Permalink to this headline">¶</a></h3>
-<div class="admonition-todo admonition" id="id13">
-<p class="admonition-title">Todo</p>
-<p>Add http traces</p>
+<div class="section" id="id14">
+<h4>Request<a class="headerlink" href="#id14" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-http notranslate"><div class="highlight"><pre><span></span><span class="nf">DELETE</span> <span class="nn">/partner-profiles</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<span class="na">Host</span><span class="o">:</span> <span class="l">backend.openteams.com</span>
+<span class="na">If-Match</span><span class="o">:</span> <span class="l">&quot;66666&quot;</span>
+<span class="na">If-Unmodified-Since</span><span class="o">:</span> <span class="l">Wed, 22 Jul 2020 13:13:13 GMT</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id15">
+<h4>Response<a class="headerlink" href="#id15" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-http notranslate"><div class="highlight"><pre><span></span><span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span> <span class="m">200</span> <span class="ne">OK</span>
+<span class="na">Content-Type</span><span class="o">:</span> <span class="l">application/json</span>
+<span class="na">Date</span><span class="o">:</span> <span class="l">Wed, 22 Jul 2020 13:13:13 GMT</span>
+</pre></div>
+</div>
 </div>
 </div>
 </div>
 <div class="section" id="the-default-partner-profile-ui-in-scrud-vue">
 <h2>The default Partner Profile UI in <code class="docutils literal notranslate"><span class="pre">scrud-vue</span></code><a class="headerlink" href="#the-default-partner-profile-ui-in-scrud-vue" title="Permalink to this headline">¶</a></h2>
-<div class="admonition-todo admonition" id="id14">
+<div class="admonition-todo admonition" id="id16">
 <p class="admonition-title">Todo</p>
 <p>Mock up some screens, for now</p>
 </div>
 <div class="section" id="get-a-listing-of-partner-profile-resources">
 <h3>Get a listing of Partner Profile resources<a class="headerlink" href="#get-a-listing-of-partner-profile-resources" title="Permalink to this headline">¶</a></h3>
-<div class="admonition-todo admonition" id="id15">
+<div class="admonition-todo admonition" id="id17">
 <p class="admonition-title">Todo</p>
 <p>Mock up some screens, for now</p>
 </div>
 </div>
 <div class="section" id="view-an-individual-partner-profile-resource">
 <h3>View an individual Partner Profile resource<a class="headerlink" href="#view-an-individual-partner-profile-resource" title="Permalink to this headline">¶</a></h3>
-<div class="admonition-todo admonition" id="id16">
+<div class="admonition-todo admonition" id="id18">
 <p class="admonition-title">Todo</p>
 <p>Mock up some screens, for now</p>
 </div>
 </div>
 <div class="section" id="edit-an-individual-partner-profile-resource">
 <h3>Edit an individual Partner Profile resource<a class="headerlink" href="#edit-an-individual-partner-profile-resource" title="Permalink to this headline">¶</a></h3>
-<div class="admonition-todo admonition" id="id17">
+<div class="admonition-todo admonition" id="id19">
 <p class="admonition-title">Todo</p>
 <p>Mock up some screens, for now</p>
 </div>
 </div>
 <div class="section" id="create-a-new-partner-profile-resource">
 <h3>Create a new Partner Profile resource<a class="headerlink" href="#create-a-new-partner-profile-resource" title="Permalink to this headline">¶</a></h3>
-<div class="admonition-todo admonition" id="id18">
+<div class="admonition-todo admonition" id="id20">
 <p class="admonition-title">Todo</p>
 <p>Mock up some screens, for now</p>
 </div>
@@ -672,47 +718,47 @@ defined by the combination of the JSON Schema and JSON-LD schema that satisfies 
 </div>
 <div class="section" id="customizing-the-rendering-of-the-tbd-property">
 <h2>Customizing the rendering of the <em>tbd</em> property<a class="headerlink" href="#customizing-the-rendering-of-the-tbd-property" title="Permalink to this headline">¶</a></h2>
-<div class="admonition-todo admonition" id="id19">
+<div class="admonition-todo admonition" id="id21">
 <p class="admonition-title">Todo</p>
 <p>Pick a property, register a new vue component for its RDF type.</p>
 </div>
 <div class="section" id="defining-the-new-vue-component">
 <h3>Defining the new Vue component<a class="headerlink" href="#defining-the-new-vue-component" title="Permalink to this headline">¶</a></h3>
-<div class="admonition-todo admonition" id="id20">
+<div class="admonition-todo admonition" id="id22">
 <p class="admonition-title">Todo</p>
 <p>Show the definition of a new Vue component.</p>
 </div>
 </div>
 <div class="section" id="registering-the-new-vue-component">
 <h3>Registering the new Vue component<a class="headerlink" href="#registering-the-new-vue-component" title="Permalink to this headline">¶</a></h3>
-<div class="admonition-todo admonition" id="id21">
+<div class="admonition-todo admonition" id="id23">
 <p class="admonition-title">Todo</p>
 <p>Show registering the component in the configuration map.</p>
 </div>
 </div>
 <div class="section" id="the-new-ui-after-customization">
 <h3>The new UI after customization<a class="headerlink" href="#the-new-ui-after-customization" title="Permalink to this headline">¶</a></h3>
-<div class="admonition-todo admonition" id="id22">
+<div class="admonition-todo admonition" id="id24">
 <p class="admonition-title">Todo</p>
 <p>Mock up some screenshots, for now.</p>
 </div>
-<div class="section" id="id23">
-<h4>View an individual Partner Profile resource<a class="headerlink" href="#id23" title="Permalink to this headline">¶</a></h4>
-<div class="admonition-todo admonition" id="id24">
-<p class="admonition-title">Todo</p>
-<p>Mock up some screens, for now</p>
-</div>
-</div>
 <div class="section" id="id25">
-<h4>Edit an individual Partner Profile resource<a class="headerlink" href="#id25" title="Permalink to this headline">¶</a></h4>
+<h4>View an individual Partner Profile resource<a class="headerlink" href="#id25" title="Permalink to this headline">¶</a></h4>
 <div class="admonition-todo admonition" id="id26">
 <p class="admonition-title">Todo</p>
 <p>Mock up some screens, for now</p>
 </div>
 </div>
 <div class="section" id="id27">
-<h4>Create a new Partner Profile resource<a class="headerlink" href="#id27" title="Permalink to this headline">¶</a></h4>
+<h4>Edit an individual Partner Profile resource<a class="headerlink" href="#id27" title="Permalink to this headline">¶</a></h4>
 <div class="admonition-todo admonition" id="id28">
+<p class="admonition-title">Todo</p>
+<p>Mock up some screens, for now</p>
+</div>
+</div>
+<div class="section" id="id29">
+<h4>Create a new Partner Profile resource<a class="headerlink" href="#id29" title="Permalink to this headline">¶</a></h4>
+<div class="admonition-todo admonition" id="id30">
 <p class="admonition-title">Todo</p>
 <p>Mock up some screens, for now</p>
 </div>

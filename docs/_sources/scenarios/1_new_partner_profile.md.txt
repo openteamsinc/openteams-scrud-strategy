@@ -126,7 +126,7 @@ HTTP/1.1 200 OK
 Content-Type: application/json
 Date: Wed, 22 Jul 2020 12:12:12 GMT
 Last-Modified: Tue, 21 Jul 2020 12:12:12 GMT
-ETag: "XXXXX"
+ETag: "11111"
 Link: <https://api.openteams.com/json-schema/PartnerProfile-Listing>; rel="describedBy"
 Link: <https://api.openteams.com/json-ld/PartnerProfile-Listing>;
       rel="http://www.w3.org/ns/json-ld#context"; type="application/ld+json"
@@ -140,7 +140,7 @@ Link: <https://api.openteams.com/json-ld/PartnerProfile-Listing>;
     {
       "url": "/partner-profiles/semantics-crud"
       , "last_modified": "Tue, 21 Jul 2020 12:12:12 GMT"
-      , "etag": "XXXXX"
+      , "etag": "00000"
       , "content": {
         "name": "Semantics and CRUD, LLC"
         , "display_name": "Semantics and CRUD"
@@ -170,7 +170,7 @@ HTTP/1.1 200 OK
 Content-Type: application/json
 Date: Wed, 22 Jul 2020 12:12:12 GMT
 Last-Modified: Tue, 21 Jul 2020 12:12:12 GMT
-ETag: "XXXXX"
+ETag: "22222"
 Link: <http://scrud.io/schemas/semantic_http.json>; rel=”describedby”
 Link: <http://scrud.io/contexts/semantic_http.json>;
       rel="http://www.w3.org/ns/json-ld#context"; type="application/ld+json"
@@ -281,7 +281,7 @@ HTTP/1.1 201 Created
 Content-Type: application/json
 Date: Wed, 22 Jul 2020 12:12:12 GMT
 Last-Modified: Wed, 22 Jul 2020 12:12:12 GMT
-ETag: "YYYYY"
+ETag: "33333"
 Location: https://backend.openteams.com/partner-profiles/safety-dancers
 
 {
@@ -310,6 +310,7 @@ HTTP/1.1 200 OK
 Content-Type: application/json
 Date: Wed, 22 Jul 2020 13:13:13 GMT
 Last-Modified: Wed, 22 Jul 2020 12:12:12 GMT
+ETag: "33333"
 Link: <https://api.openteams.com/json-schema/PartnerProfile>; rel="describedBy"
 Link: <https://api.openteams.com/json-ld/PartnerProfile>;
       rel="http://www.w3.org/ns/json-ld#context"; type="application/ld+json"
@@ -340,7 +341,7 @@ HTTP/1.1 200 OK
 Content-Type: application/json
 Date: Wed, 22 Jul 2020 12:12:12 GMT
 Last-Modified: Tue, 21 Jul 2020 12:12:12 GMT
-ETag: "XXXXX"
+ETag: "44444"
 Link: <https://api.openteams.com/json-schema/PartnerProfile-Listing>; rel="describedBy"
 Link: <https://api.openteams.com/json-ld/PartnerProfile-Listing>;
       rel="http://www.w3.org/ns/json-ld#context"; type="application/ld+json"
@@ -354,7 +355,7 @@ Link: <https://api.openteams.com/json-ld/PartnerProfile-Listing>;
     {
       "url": "/partner-profiles/semantics-crud"
       , "last_modified": "Tue, 21 Jul 2020 12:12:12 GMT"
-      , "etag": "XXXXX"
+      , "etag": "00000"
       , "content": {
         "name": "Semantics and CRUD, LLC"
         , "display_name": "Semantics and CRUD"
@@ -366,7 +367,7 @@ Link: <https://api.openteams.com/json-ld/PartnerProfile-Listing>;
     , {
       "url": "/partner-profiles/safety-dancers"
       , "last_modified": "Wed, 22 Jul 2020 12:12:12 GMT"
-      , "etag": "YYYYY"
+      , "etag": "33333"
       , "content": {
         "name": "Safety Dancers, Inc."
         , "display_name": "Safety Dancers"
@@ -397,7 +398,7 @@ HTTP/1.1 200 OK
 Content-Type: application/json
 Date: Wed, 22 Jul 2020 13:13:13 GMT
 Last-Modified: Tue, 21 Jul 2020 12:12:12 GMT
-ETag: "XXXXX"
+ETag: "55555"
 Link: <http://scrud.io/schemas/semantic_http.json>; rel=”describedby”
 Link: <http://scrud.io/contexts/semantic_http.json>;
       rel="http://www.w3.org/ns/json-ld#context"; type="application/ld+json"
@@ -484,14 +485,51 @@ Link: <http://scrud.io/contexts/semantic_http.json>;
 
 ### PUT an update to the Partner Profile resource
 
-```{todo}
-Add http traces
+#### Request
+
+```http
+PUT /partner-profiles HTTP/1.1
+Host: backend.openteams.com
+Content-Type: application/json
+If-Match: "33333"
+If-Unmodified-Since: Wed, 22 Jul 2020 12:12:12 GMT
+
+{
+  "name": "Safety Dancers, Inc."
+  , "display_name": "Safety Dancers"
+  , "slug": "safety-dancers"
+  , "logo": "http://backend.openteams.com/partners/safety-dancers/media/logo.png"
+  , "id": "some-other-uuid"
+}
+```
+
+#### Response
+
+```http
+HTTP/1.1 200 OK
+Content-Type: application/json
+Date: Wed, 22 Jul 2020 13:13:13 GMT
+Last-Modified: Wed, 22 Jul 2020 13:13:13 GMT
+ETag: "66666"
 ```
 
 ### DELETE the Partner Profile resource
 
-```{todo}
-Add http traces
+#### Request
+
+```http
+DELETE /partner-profiles HTTP/1.1
+Host: backend.openteams.com
+If-Match: "66666"
+If-Unmodified-Since: Wed, 22 Jul 2020 13:13:13 GMT
+```
+
+#### Response
+
+```http
+HTTP/1.1 200 OK
+Content-Type: application/json
+Date: Wed, 22 Jul 2020 13:13:13 GMT
 ```
 
 ## The default Partner Profile UI in `scrud-vue`
