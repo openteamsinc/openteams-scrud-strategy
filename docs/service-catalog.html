@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>Service Catalog &#8212; OpenTeams SCRUD Technical Strategy 1.0 documentation</title>
+    <link rel="stylesheet" href="_static/solar.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/language_data.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Ilustrative Scenarios for SCRUD" href="scenarios.html" />
+    <link rel="prev" title="SCRUD Client" href="scrud-client.html" /><link href='http://fonts.googleapis.com/css?family=Source+Code+Pro|Open+Sans:300italic,400italic,700italic,400,300,700' rel='stylesheet' type='text/css'>
+<link href="_static/solarized-dark.css" rel="stylesheet">
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="scenarios.html" title="Ilustrative Scenarios for SCRUD"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="scrud-client.html" title="SCRUD Client"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">OpenTeams SCRUD Technical Strategy 1.0 documentation</a> &#187;</li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Service Catalog</a><ul>
+<li><a class="reference internal" href="#example">Example</a></li>
+<li><a class="reference internal" href="#json-schema">JSON Schema</a></li>
+<li><a class="reference internal" href="#json-ld-context">JSON-LD Context</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="scrud-client.html"
+                        title="previous chapter">SCRUD Client</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="scenarios.html"
+                        title="next chapter">Ilustrative Scenarios for SCRUD</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/service-catalog.md.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="service-catalog">
+<h1>Service Catalog<a class="headerlink" href="#service-catalog" title="Permalink to this headline">¶</a></h1>
+<p>A <em>Service Catalog</em> Resource provides a client a starting point for using the API
+provided by a SCRUDful REST API. The catalog maps the primary resource types, by RDF
+type URI, to the URL that provides that resource type.</p>
+<p>Most resources listed in a <em>Service Catalog</em> resource will be listing, or collection,
+resources. Other resources provided by the <em>Service Catalog</em> could be query services,
+search services, or other parameterized services.</p>
+<div class="section" id="example">
+<h2>Example<a class="headerlink" href="#example" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+  <span class="nt">&quot;https://api.openteams.com/json-ld/User-Listing&quot;</span><span class="p">:</span>
+      <span class="s2">&quot;https://backend.openteams.com/users&quot;</span>
+  <span class="p">,</span> <span class="nt">&quot;https://api.openteams.com/json-ld/Project-Listing&quot;</span><span class="p">:</span>
+      <span class="s2">&quot;https://backend.openteams.com/projects&quot;</span>
+  <span class="p">,</span> <span class="nt">&quot;https://api.openteams.com/json-ld/Organization-Listing&quot;</span><span class="p">:</span>
+      <span class="s2">&quot;https://backend.openteams.com/organizations&quot;</span>
+  <span class="p">,</span> <span class="nt">&quot;https://api.openteams.com/json-ld/PartnerProfile-Listing&quot;</span><span class="p">:</span>
+      <span class="s2">&quot;https://backend.openteams.com/partner-profiles&quot;</span>
+  <span class="p">,</span> <span class="nt">&quot;https://api.openteams.com/json-ld/ClientProfile-Listing&quot;</span><span class="p">:</span>
+      <span class="s2">&quot;https://backend.openteams.com/client-profiles&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="json-schema">
+<h2>JSON Schema<a class="headerlink" href="#json-schema" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+  <span class="nt">&quot;$id&quot;</span><span class="p">:</span> <span class="s2">&quot;https://api.openteams.com/json-schema/ServiceCatalog&quot;</span>
+  <span class="p">,</span> <span class="nt">&quot;$schema&quot;</span><span class="p">:</span> <span class="s2">&quot;http://json-schema.org/draft-04/schema&quot;</span>
+  <span class="p">,</span> <span class="nt">&quot;title&quot;</span><span class="p">:</span> <span class="s2">&quot;Service Catalog&quot;</span>
+  <span class="p">,</span> <span class="nt">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;A dictionary of SCRUD resources provided by this REST API.&quot;</span>
+  <span class="p">,</span> <span class="nt">&quot;additionalProperties&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;string&quot;</span>
+    <span class="p">,</span> <span class="nt">&quot;format&quot;</span><span class="p">:</span> <span class="s2">&quot;uri&quot;</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="json-ld-context">
+<h2>JSON-LD Context<a class="headerlink" href="#json-ld-context" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+  <span class="nt">&quot;@type&quot;</span><span class="p">:</span> <span class="s2">&quot;https://api.openteams.com/json-ld/ServiceCatalog&quot;</span>
+  <span class="p">,</span> <span class="nt">&quot;@id&quot;</span><span class="p">:</span> <span class="s2">&quot;https://api.openteams.com/json-ld/ResourceLink&quot;</span>
+  <span class="p">,</span> <span class="nt">&quot;@container&quot;</span><span class="p">:</span> <span class="s2">&quot;@index&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="scenarios.html" title="Ilustrative Scenarios for SCRUD"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="scrud-client.html" title="SCRUD Client"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">OpenTeams SCRUD Technical Strategy 1.0 documentation</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2020, OpenTeams Inc..
+    Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 2.4.4.Theme is <a href="http://github.com/vimalkvn/solar-theme">Solar</a>
+    </div>
+  </body>
+</html>
