@@ -20,6 +20,9 @@ livehtml:
 		"$(SOURCEDIR)" \
 		"$(BUILDDIR)/html"
 
+ghpages: clean html
+	cp -rf build/html/* docs/.
+
 .PHONY: help Makefile
 
 # Catch-all target: route all unknown targets to Sphinx using the new

@@ -4,8 +4,8 @@ A *Service Catalog* Resource provides a client a starting point for using the AP
 provided by a SCRUDful REST API. The catalog maps the primary resource types, by RDF
 type URI, to the URL that provides that resource type.
 
-Most resources listed in a *Service Catalog* resource will be listing, or collection,
-resources. Other resources provided by the *Service Catalog* could be query services,
+Most resources listed in a Service Catalog resource will be listing, or collection,
+resources. Other resources provided by the Service Catalog could be query services,
 search services, or other parameterized services.
 
 ## Example
@@ -41,6 +41,9 @@ search services, or other parameterized services.
 ```
 
 ## JSON-LD Context
+
+This JSON-LD context follows the indexing scheme specified in [JSON-LD
+1.1](https://www.w3.org/TR/json-ld/#data-indexing)
 
 ```json
 {
