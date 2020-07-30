@@ -534,33 +534,133 @@ Date: Wed, 22 Jul 2020 13:13:13 GMT
 
 ## The default Partner Profile UI in `scrud-vue`
 
-```{todo}
-Mock up some screens, for now
-```
-
 ### Get a listing of Partner Profile resources
 
-```{todo}
-Mock up some screens, for now
-```
+````{describe} Mockup of Generated UI
+<h4>count</h4>
+<p>2</p>
+
+<h4>page_count</h4>
+<p>1</p>
+
+<h4>first</h4>
+<a href="">/partner-profiles?page=1</a>
+
+<h4>previous</h4>
+<p><code>null</code></p>
+
+<h4>next</h4>
+<p><code>null</code></p>
+
+<h4>last</h4>
+<a href="">/partner-profiles?page=1</a>
+
+<h4>contents</h4>
+<ol>
+  <li>
+  <a href="">/partner-profiles/semantics-crud</a>
+
+  <h4>name</h4>
+  <p>Semantics and CRUD, LLC</p>
+
+  <h4>display_name</h4>
+  <p>Semantics and CRUD</p>
+
+  <h4>slug</h4>
+  <p>semantics-crud</p>
+
+  <h4>logo</h4>
+  <a href="">/partner-profiles/semantics-crud/media/logo.png</a>
+
+  <h4>id</h4>
+  <p>some-uuid</p>
+  </li>
+
+  <li>
+  <a href="">/partner-profiles/safety-dancers</a>
+
+  <h4>name</h4>
+  <p>Safety Dancers, Inc.</p>
+
+  <h4>display_name</h4>
+  <p>Safety Dancers</p>
+
+  <h4>slug</h4>
+  <p>safety-dancers</p>
+
+  <h4>logo</h4>
+  <p><code>null</code></p>
+
+  <h4>id</h4>
+  <p>some-other-uuid</p>
+  </li>
+</ol>
+````
 
 ### View an individual Partner Profile resource
 
-```{todo}
-Mock up some screens, for now
-```
+````{describe} Mockup of Generated UI
+  <h4>name</h4>
+  <p>Semantics and CRUD, LLC</p>
+
+  <h4>display_name</h4>
+  <p>Semantics and CRUD</p>
+
+  <h4>slug<h4>
+  <p><code>semantics-crud</code></p>
+
+  <h4>logo</h4>
+  <a href="">/partner-profiles/semantics-crud/media/logo.png</a>
+````
+
 
 ### Edit an individual Partner Profile resource
 
-```{todo}
-Mock up some screens, for now
+```{describe} Mockup Generated Form
+<form action="">
+  <label for="form1-name">name</label>
+  <input type="text" id="form1-name" value="Semantics and CRUD, LLC.">
+
+  <label for="form1-display_name">display_name</label>
+  <input type="text" id="form1-display_name" value="Semantics and CRUD">
+
+  <label for="form1-slug">slug</label>
+  <input type="text" id="form1-slug" value="semantics-crud">
+
+  <label for="form1-logo">logo</label>
+  <input type="text" id="form1-logo"
+  value="https://backend.openteams.com/partner-profiles/semantics-crud/media/logo.png">
+
+  <label for="form1-id">id</label>
+  <input type="text" id="form1-id" value="some-uuid" readonly>
+
+  <button>Cancel</button>
+  <button>Submit</button>
+</form>
 ```
 
 ### Create a new Partner Profile resource
 
-```{todo}
-Mock up some screens, for now
+```{describe} Mockup Generated Creation Form
+<form action="">
+  <label for="form1-name">name</label>
+  <input type="text" id="form1-name">
+
+  <label for="form1-display_name">display_name</label>
+  <input type="text" id="form1-display_name">
+
+  <label for="form1-slug">slug</label>
+  <input type="text" id="form1-slug">
+
+  <label for="form1-logo">logo</label>
+  <input type="text" id="form1-logo"
+  value="https://backend.openteams.com/partner-profiles/semantics-crud/media/logo.png">
+
+  <button>Cancel</button>
+  <button>Submit</button>
+</form>
 ```
+
 
 ## Customizing the rendering of the _tbd_ property
 

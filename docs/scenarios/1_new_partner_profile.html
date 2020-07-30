@@ -99,9 +99,9 @@
 <li><a class="reference internal" href="#defining-the-new-vue-component">Defining the new Vue component</a></li>
 <li><a class="reference internal" href="#registering-the-new-vue-component">Registering the new Vue component</a></li>
 <li><a class="reference internal" href="#the-new-ui-after-customization">The new UI after customization</a><ul>
-<li><a class="reference internal" href="#id25">View an individual Partner Profile resource</a></li>
-<li><a class="reference internal" href="#id27">Edit an individual Partner Profile resource</a></li>
-<li><a class="reference internal" href="#id29">Create a new Partner Profile resource</a></li>
+<li><a class="reference internal" href="#id20">View an individual Partner Profile resource</a></li>
+<li><a class="reference internal" href="#id22">Edit an individual Partner Profile resource</a></li>
+<li><a class="reference internal" href="#id24">Create a new Partner Profile resource</a></li>
 </ul>
 </li>
 </ul>
@@ -683,82 +683,159 @@ defined by the combination of the JSON Schema and JSON-LD schema that satisfies 
 </div>
 <div class="section" id="the-default-partner-profile-ui-in-scrud-vue">
 <h2>The default Partner Profile UI in <code class="docutils literal notranslate"><span class="pre">scrud-vue</span></code><a class="headerlink" href="#the-default-partner-profile-ui-in-scrud-vue" title="Permalink to this headline">¶</a></h2>
-<div class="admonition-todo admonition" id="id16">
-<p class="admonition-title">Todo</p>
-<p>Mock up some screens, for now</p>
-</div>
 <div class="section" id="get-a-listing-of-partner-profile-resources">
 <h3>Get a listing of Partner Profile resources<a class="headerlink" href="#get-a-listing-of-partner-profile-resources" title="Permalink to this headline">¶</a></h3>
-<div class="admonition-todo admonition" id="id17">
-<p class="admonition-title">Todo</p>
-<p>Mock up some screens, for now</p>
-</div>
+<dl class="describe">
+<dt>
+<code class="sig-name descname">Mockup of Generated UI</code></dt>
+<dd><h4>count</h4>
+<p>2</p>
+<h4>page_count</h4>
+<p>1</p>
+<h4>first</h4>
+<a href="">/partner-profiles?page=1</a>
+<h4>previous</h4>
+<p><code>null</code></p>
+<h4>next</h4>
+<p><code>null</code></p>
+<h4>last</h4>
+<a href="">/partner-profiles?page=1</a>
+<h4>contents</h4>
+<ol>
+  <li>
+  <a href="">/partner-profiles/semantics-crud</a>
+  <h4>name</h4>
+  <p>Semantics and CRUD, LLC</p>
+  <h4>display_name</h4>
+  <p>Semantics and CRUD</p>
+  <h4>slug</h4>
+  <p>semantics-crud</p>
+  <h4>logo</h4>
+  <a href="">/partner-profiles/semantics-crud/media/logo.png</a>
+  <h4>id</h4>
+  <p>some-uuid</p>
+  </li>
+  <li>
+  <a href="">/partner-profiles/safety-dancers</a>
+  <h4>name</h4>
+  <p>Safety Dancers, Inc.</p>
+  <h4>display_name</h4>
+  <p>Safety Dancers</p>
+  <h4>slug</h4>
+  <p>safety-dancers</p>
+  <h4>logo</h4>
+  <p><code>null</code></p>
+  <h4>id</h4>
+  <p>some-other-uuid</p>
+  </li>
+</ol>
+</dd></dl>
+
 </div>
 <div class="section" id="view-an-individual-partner-profile-resource">
 <h3>View an individual Partner Profile resource<a class="headerlink" href="#view-an-individual-partner-profile-resource" title="Permalink to this headline">¶</a></h3>
-<div class="admonition-todo admonition" id="id18">
-<p class="admonition-title">Todo</p>
-<p>Mock up some screens, for now</p>
-</div>
+<dl class="describe">
+<dt>
+<code class="sig-name descname">Mockup of Generated UI</code></dt>
+<dd>  <h4>name</h4>
+  <p>Semantics and CRUD, LLC</p>
+  <h4>display_name</h4>
+  <p>Semantics and CRUD</p>
+  <h4>slug<h4>
+  <p><code>semantics-crud</code></p>
+  <h4>logo</h4>
+  <a href="">/partner-profiles/semantics-crud/media/logo.png</a>
+</dd></dl>
+
 </div>
 <div class="section" id="edit-an-individual-partner-profile-resource">
 <h3>Edit an individual Partner Profile resource<a class="headerlink" href="#edit-an-individual-partner-profile-resource" title="Permalink to this headline">¶</a></h3>
-<div class="admonition-todo admonition" id="id19">
-<p class="admonition-title">Todo</p>
-<p>Mock up some screens, for now</p>
-</div>
+<dl class="describe">
+<dt>
+<code class="sig-name descname">Mockup Generated Form</code></dt>
+<dd><form action="">
+  <label for="form1-name">name</label>
+  <input type="text" id="form1-name" value="Semantics and CRUD, LLC.">
+<p><label for="form1-display_name">display_name</label>
+<input type="text" id="form1-display_name" value="Semantics and CRUD"></p>
+<p><label for="form1-slug">slug</label>
+<input type="text" id="form1-slug" value="semantics-crud"></p>
+<p><label for="form1-logo">logo</label>
+<input type="text" id="form1-logo"
+  value="https://backend.openteams.com/partner-profiles/semantics-crud/media/logo.png"></p>
+<p><label for="form1-id">id</label>
+<input type="text" id="form1-id" value="some-uuid" readonly></p>
+<p><button>Cancel</button>
+<button>Submit</button></p>
+</form>
+</dd></dl>
+
 </div>
 <div class="section" id="create-a-new-partner-profile-resource">
 <h3>Create a new Partner Profile resource<a class="headerlink" href="#create-a-new-partner-profile-resource" title="Permalink to this headline">¶</a></h3>
-<div class="admonition-todo admonition" id="id20">
-<p class="admonition-title">Todo</p>
-<p>Mock up some screens, for now</p>
-</div>
+<dl class="describe">
+<dt>
+<code class="sig-name descname">Mockup Generated Creation Form</code></dt>
+<dd><form action="">
+  <label for="form1-name">name</label>
+  <input type="text" id="form1-name">
+<p><label for="form1-display_name">display_name</label>
+<input type="text" id="form1-display_name"></p>
+<p><label for="form1-slug">slug</label>
+<input type="text" id="form1-slug"></p>
+<p><label for="form1-logo">logo</label>
+<input type="text" id="form1-logo"
+  value="https://backend.openteams.com/partner-profiles/semantics-crud/media/logo.png"></p>
+<p><button>Cancel</button>
+<button>Submit</button></p>
+</form>
+</dd></dl>
+
 </div>
 </div>
 <div class="section" id="customizing-the-rendering-of-the-tbd-property">
 <h2>Customizing the rendering of the <em>tbd</em> property<a class="headerlink" href="#customizing-the-rendering-of-the-tbd-property" title="Permalink to this headline">¶</a></h2>
-<div class="admonition-todo admonition" id="id21">
+<div class="admonition-todo admonition" id="id16">
 <p class="admonition-title">Todo</p>
 <p>Pick a property, register a new vue component for its RDF type.</p>
 </div>
 <div class="section" id="defining-the-new-vue-component">
 <h3>Defining the new Vue component<a class="headerlink" href="#defining-the-new-vue-component" title="Permalink to this headline">¶</a></h3>
-<div class="admonition-todo admonition" id="id22">
+<div class="admonition-todo admonition" id="id17">
 <p class="admonition-title">Todo</p>
 <p>Show the definition of a new Vue component.</p>
 </div>
 </div>
 <div class="section" id="registering-the-new-vue-component">
 <h3>Registering the new Vue component<a class="headerlink" href="#registering-the-new-vue-component" title="Permalink to this headline">¶</a></h3>
-<div class="admonition-todo admonition" id="id23">
+<div class="admonition-todo admonition" id="id18">
 <p class="admonition-title">Todo</p>
 <p>Show registering the component in the configuration map.</p>
 </div>
 </div>
 <div class="section" id="the-new-ui-after-customization">
 <h3>The new UI after customization<a class="headerlink" href="#the-new-ui-after-customization" title="Permalink to this headline">¶</a></h3>
-<div class="admonition-todo admonition" id="id24">
+<div class="admonition-todo admonition" id="id19">
 <p class="admonition-title">Todo</p>
 <p>Mock up some screenshots, for now.</p>
 </div>
-<div class="section" id="id25">
-<h4>View an individual Partner Profile resource<a class="headerlink" href="#id25" title="Permalink to this headline">¶</a></h4>
-<div class="admonition-todo admonition" id="id26">
+<div class="section" id="id20">
+<h4>View an individual Partner Profile resource<a class="headerlink" href="#id20" title="Permalink to this headline">¶</a></h4>
+<div class="admonition-todo admonition" id="id21">
 <p class="admonition-title">Todo</p>
 <p>Mock up some screens, for now</p>
 </div>
 </div>
-<div class="section" id="id27">
-<h4>Edit an individual Partner Profile resource<a class="headerlink" href="#id27" title="Permalink to this headline">¶</a></h4>
-<div class="admonition-todo admonition" id="id28">
+<div class="section" id="id22">
+<h4>Edit an individual Partner Profile resource<a class="headerlink" href="#id22" title="Permalink to this headline">¶</a></h4>
+<div class="admonition-todo admonition" id="id23">
 <p class="admonition-title">Todo</p>
 <p>Mock up some screens, for now</p>
 </div>
 </div>
-<div class="section" id="id29">
-<h4>Create a new Partner Profile resource<a class="headerlink" href="#id29" title="Permalink to this headline">¶</a></h4>
-<div class="admonition-todo admonition" id="id30">
+<div class="section" id="id24">
+<h4>Create a new Partner Profile resource<a class="headerlink" href="#id24" title="Permalink to this headline">¶</a></h4>
+<div class="admonition-todo admonition" id="id25">
 <p class="admonition-title">Todo</p>
 <p>Mock up some screens, for now</p>
 </div>

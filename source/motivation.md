@@ -13,7 +13,7 @@ definition of new web services as trivial as defining a {ref}`JSON-Schema` and
 free and basic UI rendering coming for free as well.
 
 (Proposal)=
-# Proposal
+## Proposal
 
 Let's use the resources we have today to build this architecture in July so we can ramp
 up development in August with minimal resources needed. Let's also lay an open source
