@@ -10,6 +10,7 @@ motivation
 overview
 scrud
 envelopes
+envelope-listings
 rbac
 scrud-client
 service-catalog

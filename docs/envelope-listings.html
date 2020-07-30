@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>Envelope Listings &#8212; OpenTeams SCRUD Technical Strategy 1.0 documentation</title>
+    <link rel="stylesheet" href="_static/solar.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/language_data.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Attribute and Role-Based Access Control" href="rbac.html" />
+    <link rel="prev" title="Envelope Properties" href="envelopes.html" /><link href='http://fonts.googleapis.com/css?family=Source+Code+Pro|Open+Sans:300italic,400italic,700italic,400,300,700' rel='stylesheet' type='text/css'>
+<link href="_static/solarized-dark.css" rel="stylesheet">
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="rbac.html" title="Attribute and Role-Based Access Control"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="envelopes.html" title="Envelope Properties"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">OpenTeams SCRUD Technical Strategy 1.0 documentation</a> &#187;</li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Envelope Listings</a><ul>
+<li><a class="reference internal" href="#example">Example</a><ul>
+<li><a class="reference internal" href="#json-schema">JSON Schema</a></li>
+<li><a class="reference internal" href="#json-ld-context">JSON-LD Context</a></li>
+<li><a class="reference internal" href="#json-schema-template">JSON Schema Template</a></li>
+<li><a class="reference internal" href="#json-ld-context-template">JSON-LD Context Template</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="envelopes.html"
+                        title="previous chapter">Envelope Properties</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="rbac.html"
+                        title="next chapter">Attribute and Role-Based Access Control</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/envelope-listings.md.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="envelope-listings">
+<h1>Envelope Listings<a class="headerlink" href="#envelope-listings" title="Permalink to this headline">¶</a></h1>
+<p>Endpoints for collections of resources, query services, and search services <strong>SHOULD</strong>
+return paged listings of <a class="reference internal" href="envelopes.html#envelope-properties"><span class="std std-ref">envelopes</span></a>. These envelope listings
+will need to be described in the JSON Schema and JSON-LD for those services.</p>
+<div class="section" id="example">
+<h2>Example<a class="headerlink" href="#example" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+  <span class="nt">&quot;count&quot;</span><span class="p">:</span> <span class="mi">1</span>
+  <span class="p">,</span> <span class="nt">&quot;page_count&quot;</span><span class="p">:</span> <span class="mi">1</span>
+  <span class="p">,</span> <span class="nt">&quot;first&quot;</span><span class="p">:</span> <span class="s2">&quot;/partner-profiles?page=1&quot;</span>
+  <span class="p">,</span> <span class="nt">&quot;previous&quot;</span><span class="p">:</span> <span class="kc">null</span>
+  <span class="p">,</span> <span class="nt">&quot;next&quot;</span><span class="p">:</span> <span class="kc">null</span>
+  <span class="p">,</span> <span class="nt">&quot;last&quot;</span><span class="p">:</span> <span class="s2">&quot;/partner-profiles?page=1&quot;</span>
+  <span class="p">,</span> <span class="nt">&quot;content&quot;</span><span class="p">:</span> <span class="p">[</span>
+    <span class="p">{</span>
+      <span class="nt">&quot;url&quot;</span><span class="p">:</span> <span class="s2">&quot;/partner-profiles/semantics-crud&quot;</span>
+      <span class="p">,</span> <span class="nt">&quot;last_modified&quot;</span><span class="p">:</span> <span class="s2">&quot;Tue, 21 Jul 2020 12:12:12 GMT&quot;</span>
+      <span class="p">,</span> <span class="nt">&quot;etag&quot;</span><span class="p">:</span> <span class="s2">&quot;00000&quot;</span>
+      <span class="p">,</span> <span class="nt">&quot;content&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;Semantics and CRUD, LLC&quot;</span>
+        <span class="p">,</span> <span class="nt">&quot;display_name&quot;</span><span class="p">:</span> <span class="s2">&quot;Semantics and CRUD&quot;</span>
+        <span class="p">,</span> <span class="nt">&quot;slug&quot;</span><span class="p">:</span> <span class="s2">&quot;semantics-crud&quot;</span>
+        <span class="p">,</span> <span class="nt">&quot;logo&quot;</span><span class="p">:</span> <span class="s2">&quot;http://backend.openteams.com/partners/semantics-crud/media/logo.png&quot;</span>
+        <span class="p">,</span> <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;some-uuid&quot;</span>
+      <span class="p">}</span>
+    <span class="p">}</span>
+  <span class="p">]</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<div class="section" id="json-schema">
+<h3>JSON Schema<a class="headerlink" href="#json-schema" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+  <span class="nt">&quot;$id&quot;</span><span class="p">:</span> <span class="s2">&quot;https://api.openteams.com/json-schema/PartnerProfile-Listing&quot;</span>
+  <span class="p">,</span> <span class="nt">&quot;$schema&quot;</span><span class="p">:</span> <span class="s2">&quot;http://json-schema.org/draft-04/schema&quot;</span>
+  <span class="p">,</span> <span class="nt">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;A listing of Partner Profile resources.&quot;</span>
+  <span class="p">,</span> <span class="nt">&quot;properties&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="nt">&quot;count&quot;</span><span class="p">:</span> <span class="p">{</span>
+      <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;integer&quot;</span>
+      <span class="p">,</span> <span class="nt">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;The total number of items in the collection.&quot;</span>
+    <span class="p">}</span>
+    <span class="p">,</span> <span class="nt">&quot;page_count&quot;</span><span class="p">:</span> <span class="p">{</span>
+      <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;integer&quot;</span>
+      <span class="p">,</span> <span class="nt">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;The total number of pages in the collection.&quot;</span>
+    <span class="p">}</span>
+    <span class="p">,</span> <span class="nt">&quot;first&quot;</span><span class="p">:</span> <span class="p">{</span>
+      <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;string&quot;</span>
+      <span class="p">,</span> <span class="nt">&quot;format&quot;</span><span class="p">:</span> <span class="s2">&quot;uri&quot;</span>
+      <span class="p">,</span> <span class="nt">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;URL of the first page.&quot;</span>
+    <span class="p">}</span>
+    <span class="p">,</span> <span class="nt">&quot;previous&quot;</span><span class="p">:</span> <span class="p">{</span>
+      <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;string&quot;</span>
+      <span class="p">,</span> <span class="nt">&quot;format&quot;</span><span class="p">:</span> <span class="s2">&quot;uri&quot;</span>
+      <span class="p">,</span> <span class="nt">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;URL of the previous page, if any.&quot;</span>
+    <span class="p">}</span>
+    <span class="p">,</span> <span class="nt">&quot;next&quot;</span><span class="p">:</span> <span class="p">{</span>
+      <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;string&quot;</span>
+      <span class="p">,</span> <span class="nt">&quot;format&quot;</span><span class="p">:</span> <span class="s2">&quot;uri&quot;</span>
+      <span class="p">,</span> <span class="nt">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;URL of the next page, if any.&quot;</span>
+    <span class="p">}</span>
+    <span class="p">,</span> <span class="nt">&quot;last&quot;</span><span class="p">:</span> <span class="p">{</span>
+      <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;string&quot;</span>
+      <span class="p">,</span> <span class="nt">&quot;format&quot;</span><span class="p">:</span> <span class="s2">&quot;uri&quot;</span>
+      <span class="p">,</span> <span class="nt">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;URL of the last page.&quot;</span>
+    <span class="p">}</span>
+    <span class="p">,</span> <span class="nt">&quot;content&quot;</span><span class="p">:</span> <span class="p">{</span>
+      <span class="nt">&quot;properties&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;array&quot;</span>
+        <span class="p">,</span> <span class="nt">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;Listing items, Partner Profile resources, in Envelopes.&quot;</span>
+        <span class="p">,</span> <span class="nt">&quot;items&quot;</span><span class="p">:</span> <span class="p">{</span>
+          <span class="nt">&quot;$ref&quot;</span><span class="p">:</span> <span class="s2">&quot;https://api.openteams.com/json-schema/Envelope&quot;</span>
+        <span class="p">}</span>
+      <span class="p">}</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="json-ld-context">
+<h3>JSON-LD Context<a class="headerlink" href="#json-ld-context" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+  <span class="nt">&quot;openteams&quot;</span><span class="p">:</span> <span class="s2">&quot;https://ap.openteams.com/json-ld/&quot;</span>
+  <span class="p">,</span> <span class="nt">&quot;count&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="nt">&quot;@id&quot;</span><span class="p">:</span> <span class="s2">&quot;openteams:count&quot;</span>
+  <span class="p">}</span>
+  <span class="p">,</span> <span class="nt">&quot;page_count&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="nt">&quot;@id&quot;</span><span class="p">:</span> <span class="s2">&quot;openteams:page_count&quot;</span>
+  <span class="p">}</span>
+  <span class="p">,</span> <span class="nt">&quot;first&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="nt">&quot;@id&quot;</span><span class="p">:</span> <span class="s2">&quot;opententeams:first&quot;</span>
+  <span class="p">}</span>
+  <span class="p">,</span> <span class="nt">&quot;previous&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="nt">&quot;@id&quot;</span><span class="p">:</span> <span class="s2">&quot;opententeams:previous&quot;</span>
+  <span class="p">}</span>
+  <span class="p">,</span> <span class="nt">&quot;next&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="nt">&quot;@id&quot;</span><span class="p">:</span> <span class="s2">&quot;opententeams:next&quot;</span>
+  <span class="p">}</span>
+  <span class="p">,</span> <span class="nt">&quot;last&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="nt">&quot;@id&quot;</span><span class="p">:</span> <span class="s2">&quot;opententeams:last&quot;</span>
+  <span class="p">}</span>
+  <span class="p">,</span> <span class="nt">&quot;content&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="nt">&quot;@id&quot;</span><span class="p">:</span> <span class="s2">&quot;openteams:Envelope&quot;</span>
+    <span class="p">,</span> <span class="nt">&quot;@container&quot;</span><span class="p">:</span> <span class="s2">&quot;@list&quot;</span>
+    <span class="p">,</span> <span class="nt">&quot;openteams:envelopeContents&quot;</span><span class="p">:</span> <span class="s2">&quot;openteams:PartnerProfile&quot;</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="json-schema-template">
+<h3>JSON Schema Template<a class="headerlink" href="#json-schema-template" title="Permalink to this headline">¶</a></h3>
+<p>This Python string format template defines the minimal form of any paginated Listing
+resource.</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+  <span class="nt">&quot;$id&quot;</span><span class="p">:</span> <span class="s2">&quot;{resource_type_uri}&quot;</span>
+  <span class="p">,</span> <span class="nt">&quot;$schema&quot;</span><span class="p">:</span> <span class="s2">&quot;http://json-schema.org/draft-04/schema&quot;</span>
+  <span class="p">,</span> <span class="nt">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;A listing of {resource_type_name} resources.&quot;</span>
+  <span class="p">,</span> <span class="nt">&quot;properties&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="nt">&quot;count&quot;</span><span class="p">:</span> <span class="p">{</span>
+      <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;integer&quot;</span>
+      <span class="p">,</span> <span class="nt">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;The total number of items in the collection.&quot;</span>
+    <span class="p">}</span>
+    <span class="p">,</span> <span class="nt">&quot;page_count&quot;</span><span class="p">:</span> <span class="p">{</span>
+      <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;integer&quot;</span>
+      <span class="p">,</span> <span class="nt">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;The total number of pages in the collection.&quot;</span>
+    <span class="p">}</span>
+    <span class="p">,</span> <span class="nt">&quot;first&quot;</span><span class="p">:</span> <span class="p">{</span>
+      <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;string&quot;</span>
+      <span class="p">,</span> <span class="nt">&quot;format&quot;</span><span class="p">:</span> <span class="s2">&quot;uri&quot;</span>
+      <span class="p">,</span> <span class="nt">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;URL of the first page.&quot;</span>
+    <span class="p">}</span>
+    <span class="p">,</span> <span class="nt">&quot;previous&quot;</span><span class="p">:</span> <span class="p">{</span>
+      <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;string&quot;</span>
+      <span class="p">,</span> <span class="nt">&quot;format&quot;</span><span class="p">:</span> <span class="s2">&quot;uri&quot;</span>
+      <span class="p">,</span> <span class="nt">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;URL of the previous page, if any.&quot;</span>
+    <span class="p">}</span>
+    <span class="p">,</span> <span class="nt">&quot;next&quot;</span><span class="p">:</span> <span class="p">{</span>
+      <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;string&quot;</span>
+      <span class="p">,</span> <span class="nt">&quot;format&quot;</span><span class="p">:</span> <span class="s2">&quot;uri&quot;</span>
+      <span class="p">,</span> <span class="nt">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;URL of the next page, if any.&quot;</span>
+    <span class="p">}</span>
+    <span class="p">,</span> <span class="nt">&quot;last&quot;</span><span class="p">:</span> <span class="p">{</span>
+      <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;string&quot;</span>
+      <span class="p">,</span> <span class="nt">&quot;format&quot;</span><span class="p">:</span> <span class="s2">&quot;uri&quot;</span>
+      <span class="p">,</span> <span class="nt">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;URL of the last page.&quot;</span>
+    <span class="p">}</span>
+    <span class="p">,</span> <span class="nt">&quot;content&quot;</span><span class="p">:</span> <span class="p">{</span>
+      <span class="nt">&quot;properties&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;array&quot;</span>
+        <span class="p">,</span> <span class="nt">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;Listing items, {resource_type_name} resources, in Envelopes.&quot;</span>
+        <span class="p">,</span> <span class="nt">&quot;items&quot;</span><span class="p">:</span> <span class="p">{</span>
+          <span class="nt">&quot;$ref&quot;</span><span class="p">:</span> <span class="s2">&quot;https://api.openteams.com/json-schema/Envelope&quot;</span>
+        <span class="p">}</span>
+      <span class="p">}</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="json-ld-context-template">
+<h3>JSON-LD Context Template<a class="headerlink" href="#json-ld-context-template" title="Permalink to this headline">¶</a></h3>
+<p>This Python string format template defines the minimal form of any paginated Listing
+resource.</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+  <span class="nt">&quot;openteams&quot;</span><span class="p">:</span> <span class="s2">&quot;https://ap.openteams.com/json-ld/&quot;</span>
+  <span class="p">,</span> <span class="nt">&quot;count&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="nt">&quot;@id&quot;</span><span class="p">:</span> <span class="s2">&quot;openteams:count&quot;</span>
+  <span class="p">}</span>
+  <span class="p">,</span> <span class="nt">&quot;page_count&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="nt">&quot;@id&quot;</span><span class="p">:</span> <span class="s2">&quot;openteams:page_count&quot;</span>
+  <span class="p">}</span>
+  <span class="p">,</span> <span class="nt">&quot;first&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="nt">&quot;@id&quot;</span><span class="p">:</span> <span class="s2">&quot;opententeams:first&quot;</span>
+  <span class="p">}</span>
+  <span class="p">,</span> <span class="nt">&quot;previous&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="nt">&quot;@id&quot;</span><span class="p">:</span> <span class="s2">&quot;opententeams:previous&quot;</span>
+  <span class="p">}</span>
+  <span class="p">,</span> <span class="nt">&quot;next&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="nt">&quot;@id&quot;</span><span class="p">:</span> <span class="s2">&quot;opententeams:next&quot;</span>
+  <span class="p">}</span>
+  <span class="p">,</span> <span class="nt">&quot;last&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="nt">&quot;@id&quot;</span><span class="p">:</span> <span class="s2">&quot;opententeams:last&quot;</span>
+  <span class="p">}</span>
+  <span class="p">,</span> <span class="nt">&quot;content&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="nt">&quot;@id&quot;</span><span class="p">:</span> <span class="s2">&quot;openteams:Envelope&quot;</span>
+    <span class="p">,</span> <span class="nt">&quot;@container&quot;</span><span class="p">:</span> <span class="s2">&quot;@list&quot;</span>
+    <span class="p">,</span> <span class="nt">&quot;openteams:envelopeContents&quot;</span><span class="p">:</span> <span class="s2">&quot;{resource_rdf_type_uri}&quot;</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="rbac.html" title="Attribute and Role-Based Access Control"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="envelopes.html" title="Envelope Properties"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">OpenTeams SCRUD Technical Strategy 1.0 documentation</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2020, OpenTeams Inc..
+    Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 2.4.4.Theme is <a href="http://github.com/vimalkvn/solar-theme">Solar</a>
+    </div>
+  </body>
+</html>
