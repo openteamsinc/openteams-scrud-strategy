@@ -15,7 +15,7 @@ jobs:
       with:
         auto-update-conda: true
         python-version: 3.8
-        activate-environment: sphinx-doc
+        activate-environment: scrud-strategy
         environment-file: environment.yml    
     
     - name: Build docs
